@@ -21,8 +21,8 @@ namespace login
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            fSIdTBox.ImeMode = ImeMode.Disable;
-            fSPassTBox.ImeMode = ImeMode.Disable;
+            fSIdTBox.ImeMode = ImeMode.Disable; //IMEを無効にして半角の文字だけ入力できるようにする
+            fSPassTBox.ImeMode = ImeMode.Disable; //IMEを無効にして半角の文字だけ入力できるようにする
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -57,7 +57,29 @@ namespace login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            OleDbDataAdapter da = new OleDbDataAdapter(); //データアダプタオブジェクト
+            OleDbCommand cmd = new OleDbCommand();        //コマンドオブジェクト
+            string sid = fSIdTBox.Text;
+            string spass = fSPassTBox.Text;
+            cmd.Connection = cn;
+            cmd.CommandText = "SELECT * FROM Member WHERE ID=@id AND Pass=@pass";
+            da.SelectCommand = cmd;
+            cmd.Parameters.AddWithValue("@id", sid);         //IDのパラメータ
+            cmd.Parameters.AddWithValue("@pass", spass);     //Passのパラメータ
+            DataTable dt = new DataTable();
+            da.Fill(dt);
 
+            if (dt.Rows.Count > 0)    //データテーブルの行数
+            {
+                this.Hide();
+                frmMain fmM = new frmMain();
+                fmM.Show();
+            }
+            else
+            {
+                MessageBox.Show("ID、パスワードを確認してください。", "WinSystem02");
+                fSIdTBox.Focus();
+            }
         }
 
         private void btnCansel_Click(object sender, EventArgs e)
