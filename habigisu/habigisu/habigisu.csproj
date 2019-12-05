@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmOrderStockCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderStockCreation.Designer.cs">
+      <DependentUpon>frmOrderStockCreation.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSignin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmOrderStockCreation.resx">
+      <DependentUpon>frmOrderStockCreation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSignin.resx">
       <DependentUpon>frmSignin.cs</DependentUpon>
     </EmbeddedResource>
