@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.fOMBtn1 = new System.Windows.Forms.Button();
+            this.fOMStatusTbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.fOMSearchBtn = new System.Windows.Forms.Button();
+            this.fOMDataGridView = new System.Windows.Forms.DataGridView();
+            this.fOMConfirmBtn = new System.Windows.Forms.Button();
+            this.fOMUpdateBtn = new System.Windows.Forms.Button();
+            this.fOMBackBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,38 +43,40 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.fOMYearCbox1 = new System.Windows.Forms.ComboBox();
+            this.fOMMonthCbox1 = new System.Windows.Forms.ComboBox();
+            this.fOMDayCbox1 = new System.Windows.Forms.ComboBox();
+            this.fOMYearCbox2 = new System.Windows.Forms.ComboBox();
+            this.fOMMonthCbox2 = new System.Windows.Forms.ComboBox();
+            this.fOMDayCbox2 = new System.Windows.Forms.ComboBox();
+            this.fOMBtn2 = new System.Windows.Forms.Button();
+            this.fOMProductTbox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.fOMMakeBtn = new System.Windows.Forms.Button();
+            this.namelabel = new System.Windows.Forms.Label();
+            this.idlabel = new System.Windows.Forms.Label();
+            this.fOMOrderIdTbox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fOMDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // fOMBtn1
             // 
-            this.button1.Location = new System.Drawing.Point(2, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 37);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "注文一覧";
-            this.button1.UseVisualStyleBackColor = true;
+            this.fOMBtn1.Location = new System.Drawing.Point(2, 1);
+            this.fOMBtn1.Name = "fOMBtn1";
+            this.fOMBtn1.Size = new System.Drawing.Size(139, 37);
+            this.fOMBtn1.TabIndex = 0;
+            this.fOMBtn1.Text = "注文一覧";
+            this.fOMBtn1.UseVisualStyleBackColor = true;
+            this.fOMBtn1.Click += new System.EventHandler(this.fOMBtn1_Click);
             // 
-            // textBox1
+            // fOMStatusTbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(2, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 22);
-            this.textBox1.TabIndex = 1;
+            this.fOMStatusTbox.Location = new System.Drawing.Point(2, 44);
+            this.fOMStatusTbox.Name = "fOMStatusTbox";
+            this.fOMStatusTbox.Size = new System.Drawing.Size(156, 22);
+            this.fOMStatusTbox.TabIndex = 1;
+            this.fOMStatusTbox.TextChanged += new System.EventHandler(this.fOMStatusTbox_TextChanged);
             // 
             // label1
             // 
@@ -85,50 +87,54 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "顧客注文状況";
             // 
-            // button2
+            // fOMSearchBtn
             // 
-            this.button2.Location = new System.Drawing.Point(698, 69);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 26);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "検索";
-            this.button2.UseVisualStyleBackColor = true;
+            this.fOMSearchBtn.Location = new System.Drawing.Point(698, 69);
+            this.fOMSearchBtn.Name = "fOMSearchBtn";
+            this.fOMSearchBtn.Size = new System.Drawing.Size(100, 26);
+            this.fOMSearchBtn.TabIndex = 9;
+            this.fOMSearchBtn.Text = "検索";
+            this.fOMSearchBtn.UseVisualStyleBackColor = true;
+            this.fOMSearchBtn.Click += new System.EventHandler(this.fOMSearchBtn_Click);
             // 
-            // dataGridView1
+            // fOMDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 100);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(796, 315);
-            this.dataGridView1.TabIndex = 10;
+            this.fOMDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.fOMDataGridView.Location = new System.Drawing.Point(2, 100);
+            this.fOMDataGridView.Name = "fOMDataGridView";
+            this.fOMDataGridView.RowTemplate.Height = 24;
+            this.fOMDataGridView.Size = new System.Drawing.Size(796, 315);
+            this.fOMDataGridView.TabIndex = 10;
             // 
-            // button3
+            // fOMConfirmBtn
             // 
-            this.button3.Location = new System.Drawing.Point(624, 418);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 29);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "確定";
-            this.button3.UseVisualStyleBackColor = true;
+            this.fOMConfirmBtn.Location = new System.Drawing.Point(624, 418);
+            this.fOMConfirmBtn.Name = "fOMConfirmBtn";
+            this.fOMConfirmBtn.Size = new System.Drawing.Size(84, 29);
+            this.fOMConfirmBtn.TabIndex = 11;
+            this.fOMConfirmBtn.Text = "確定";
+            this.fOMConfirmBtn.UseVisualStyleBackColor = true;
+            this.fOMConfirmBtn.Click += new System.EventHandler(this.fOMConfirmBtn_Click);
             // 
-            // button4
+            // fOMUpdateBtn
             // 
-            this.button4.Location = new System.Drawing.Point(2, 418);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(86, 29);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "更新";
-            this.button4.UseVisualStyleBackColor = true;
+            this.fOMUpdateBtn.Location = new System.Drawing.Point(2, 418);
+            this.fOMUpdateBtn.Name = "fOMUpdateBtn";
+            this.fOMUpdateBtn.Size = new System.Drawing.Size(86, 29);
+            this.fOMUpdateBtn.TabIndex = 12;
+            this.fOMUpdateBtn.Text = "更新";
+            this.fOMUpdateBtn.UseVisualStyleBackColor = true;
+            this.fOMUpdateBtn.Click += new System.EventHandler(this.fOMUpdateBtn_Click);
             // 
-            // button5
+            // fOMBackBtn
             // 
-            this.button5.Location = new System.Drawing.Point(714, 418);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(84, 29);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "戻る";
-            this.button5.UseVisualStyleBackColor = true;
+            this.fOMBackBtn.Location = new System.Drawing.Point(714, 418);
+            this.fOMBackBtn.Name = "fOMBackBtn";
+            this.fOMBackBtn.Size = new System.Drawing.Size(84, 29);
+            this.fOMBackBtn.TabIndex = 13;
+            this.fOMBackBtn.Text = "戻る";
+            this.fOMBackBtn.UseVisualStyleBackColor = true;
+            this.fOMBackBtn.Click += new System.EventHandler(this.fOMBackBtn_Click);
             // 
             // label2
             // 
@@ -193,69 +199,77 @@
             this.label8.TabIndex = 20;
             this.label8.Text = "日";
             // 
-            // comboBox1
+            // fOMYearCbox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(2, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 23);
-            this.comboBox1.TabIndex = 21;
+            this.fOMYearCbox1.FormattingEnabled = true;
+            this.fOMYearCbox1.Location = new System.Drawing.Point(2, 71);
+            this.fOMYearCbox1.Name = "fOMYearCbox1";
+            this.fOMYearCbox1.Size = new System.Drawing.Size(100, 23);
+            this.fOMYearCbox1.TabIndex = 21;
+            this.fOMYearCbox1.SelectedIndexChanged += new System.EventHandler(this.fOMYearCbox1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // fOMMonthCbox1
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(137, 71);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(55, 23);
-            this.comboBox2.TabIndex = 22;
+            this.fOMMonthCbox1.FormattingEnabled = true;
+            this.fOMMonthCbox1.Location = new System.Drawing.Point(137, 71);
+            this.fOMMonthCbox1.Name = "fOMMonthCbox1";
+            this.fOMMonthCbox1.Size = new System.Drawing.Size(55, 23);
+            this.fOMMonthCbox1.TabIndex = 22;
+            this.fOMMonthCbox1.SelectedIndexChanged += new System.EventHandler(this.fOMMonthCbox1_SelectedIndexChanged);
             // 
-            // comboBox3
+            // fOMDayCbox1
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(226, 71);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(55, 23);
-            this.comboBox3.TabIndex = 23;
+            this.fOMDayCbox1.FormattingEnabled = true;
+            this.fOMDayCbox1.Location = new System.Drawing.Point(226, 71);
+            this.fOMDayCbox1.Name = "fOMDayCbox1";
+            this.fOMDayCbox1.Size = new System.Drawing.Size(55, 23);
+            this.fOMDayCbox1.TabIndex = 23;
+            this.fOMDayCbox1.SelectedIndexChanged += new System.EventHandler(this.fOMDayCbox1_SelectedIndexChanged);
             // 
-            // comboBox4
+            // fOMYearCbox2
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(343, 71);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(100, 23);
-            this.comboBox4.TabIndex = 24;
+            this.fOMYearCbox2.FormattingEnabled = true;
+            this.fOMYearCbox2.Location = new System.Drawing.Point(343, 71);
+            this.fOMYearCbox2.Name = "fOMYearCbox2";
+            this.fOMYearCbox2.Size = new System.Drawing.Size(100, 23);
+            this.fOMYearCbox2.TabIndex = 24;
+            this.fOMYearCbox2.SelectedIndexChanged += new System.EventHandler(this.fOMYearCbox2_SelectedIndexChanged);
             // 
-            // comboBox5
+            // fOMMonthCbox2
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(478, 71);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(54, 23);
-            this.comboBox5.TabIndex = 25;
+            this.fOMMonthCbox2.FormattingEnabled = true;
+            this.fOMMonthCbox2.Location = new System.Drawing.Point(478, 71);
+            this.fOMMonthCbox2.Name = "fOMMonthCbox2";
+            this.fOMMonthCbox2.Size = new System.Drawing.Size(54, 23);
+            this.fOMMonthCbox2.TabIndex = 25;
+            this.fOMMonthCbox2.SelectedIndexChanged += new System.EventHandler(this.fOMMonthCbox2_SelectedIndexChanged);
             // 
-            // comboBox6
+            // fOMDayCbox2
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(566, 71);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(55, 23);
-            this.comboBox6.TabIndex = 26;
+            this.fOMDayCbox2.FormattingEnabled = true;
+            this.fOMDayCbox2.Location = new System.Drawing.Point(566, 71);
+            this.fOMDayCbox2.Name = "fOMDayCbox2";
+            this.fOMDayCbox2.Size = new System.Drawing.Size(55, 23);
+            this.fOMDayCbox2.TabIndex = 26;
+            this.fOMDayCbox2.SelectedIndexChanged += new System.EventHandler(this.fOMDayCbox2_SelectedIndexChanged);
             // 
-            // button6
+            // fOMBtn2
             // 
-            this.button6.Location = new System.Drawing.Point(145, 1);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(125, 37);
-            this.button6.TabIndex = 27;
-            this.button6.Text = "未出庫一覧";
-            this.button6.UseVisualStyleBackColor = true;
+            this.fOMBtn2.Location = new System.Drawing.Point(145, 1);
+            this.fOMBtn2.Name = "fOMBtn2";
+            this.fOMBtn2.Size = new System.Drawing.Size(125, 37);
+            this.fOMBtn2.TabIndex = 27;
+            this.fOMBtn2.Text = "未出庫一覧";
+            this.fOMBtn2.UseVisualStyleBackColor = true;
+            this.fOMBtn2.Click += new System.EventHandler(this.fOMBtn2_Click);
             // 
-            // textBox2
+            // fOMProductTbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(506, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 22);
-            this.textBox2.TabIndex = 28;
+            this.fOMProductTbox.Location = new System.Drawing.Point(506, 44);
+            this.fOMProductTbox.Name = "fOMProductTbox";
+            this.fOMProductTbox.Size = new System.Drawing.Size(169, 22);
+            this.fOMProductTbox.TabIndex = 28;
+            this.fOMProductTbox.TextChanged += new System.EventHandler(this.fOMProductTbox_TextChanged);
             // 
             // label9
             // 
@@ -266,39 +280,41 @@
             this.label9.TabIndex = 29;
             this.label9.Text = "商品ID";
             // 
-            // button7
+            // fOMMakeBtn
             // 
-            this.button7.Location = new System.Drawing.Point(94, 418);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(98, 29);
-            this.button7.TabIndex = 30;
-            this.button7.Text = "注文書作成";
-            this.button7.UseVisualStyleBackColor = true;
+            this.fOMMakeBtn.Location = new System.Drawing.Point(94, 418);
+            this.fOMMakeBtn.Name = "fOMMakeBtn";
+            this.fOMMakeBtn.Size = new System.Drawing.Size(98, 29);
+            this.fOMMakeBtn.TabIndex = 30;
+            this.fOMMakeBtn.Text = "注文書作成";
+            this.fOMMakeBtn.UseVisualStyleBackColor = true;
+            this.fOMMakeBtn.Click += new System.EventHandler(this.fOMMakeBtn_Click);
             // 
-            // label10
+            // namelabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(737, 9);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(52, 15);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "社員名";
+            this.namelabel.AutoSize = true;
+            this.namelabel.Location = new System.Drawing.Point(737, 9);
+            this.namelabel.Name = "namelabel";
+            this.namelabel.Size = new System.Drawing.Size(52, 15);
+            this.namelabel.TabIndex = 31;
+            this.namelabel.Text = "社員名";
             // 
-            // label11
+            // idlabel
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(668, 9);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(51, 15);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "社員ID";
+            this.idlabel.AutoSize = true;
+            this.idlabel.Location = new System.Drawing.Point(668, 9);
+            this.idlabel.Name = "idlabel";
+            this.idlabel.Size = new System.Drawing.Size(51, 15);
+            this.idlabel.TabIndex = 32;
+            this.idlabel.Text = "社員ID";
             // 
-            // textBox3
+            // fOMOrderIdTbox
             // 
-            this.textBox3.Location = new System.Drawing.Point(280, 44);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(154, 22);
-            this.textBox3.TabIndex = 33;
+            this.fOMOrderIdTbox.Location = new System.Drawing.Point(280, 44);
+            this.fOMOrderIdTbox.Name = "fOMOrderIdTbox";
+            this.fOMOrderIdTbox.Size = new System.Drawing.Size(154, 22);
+            this.fOMOrderIdTbox.TabIndex = 33;
+            this.fOMOrderIdTbox.TextChanged += new System.EventHandler(this.fOMOrderIdTbox_TextChanged);
             // 
             // label12
             // 
@@ -315,19 +331,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.fOMOrderIdTbox);
+            this.Controls.Add(this.idlabel);
+            this.Controls.Add(this.namelabel);
+            this.Controls.Add(this.fOMMakeBtn);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.fOMProductTbox);
+            this.Controls.Add(this.fOMBtn2);
+            this.Controls.Add(this.fOMDayCbox2);
+            this.Controls.Add(this.fOMMonthCbox2);
+            this.Controls.Add(this.fOMYearCbox2);
+            this.Controls.Add(this.fOMDayCbox1);
+            this.Controls.Add(this.fOMMonthCbox1);
+            this.Controls.Add(this.fOMYearCbox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -335,17 +351,17 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.fOMBackBtn);
+            this.Controls.Add(this.fOMUpdateBtn);
+            this.Controls.Add(this.fOMConfirmBtn);
+            this.Controls.Add(this.fOMDataGridView);
+            this.Controls.Add(this.fOMSearchBtn);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.fOMStatusTbox);
+            this.Controls.Add(this.fOMBtn1);
             this.Name = "frmOrderManagement";
             this.Text = "注文管理画面";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fOMDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,14 +369,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button fOMBtn1;
+        private System.Windows.Forms.TextBox fOMStatusTbox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button fOMSearchBtn;
+        private System.Windows.Forms.DataGridView fOMDataGridView;
+        private System.Windows.Forms.Button fOMConfirmBtn;
+        private System.Windows.Forms.Button fOMUpdateBtn;
+        private System.Windows.Forms.Button fOMBackBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -368,19 +384,19 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox fOMYearCbox1;
+        private System.Windows.Forms.ComboBox fOMMonthCbox1;
+        private System.Windows.Forms.ComboBox fOMDayCbox1;
+        private System.Windows.Forms.ComboBox fOMYearCbox2;
+        private System.Windows.Forms.ComboBox fOMMonthCbox2;
+        private System.Windows.Forms.ComboBox fOMDayCbox2;
+        private System.Windows.Forms.Button fOMBtn2;
+        private System.Windows.Forms.TextBox fOMProductTbox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button fOMMakeBtn;
+        private System.Windows.Forms.Label namelabel;
+        private System.Windows.Forms.Label idlabel;
+        private System.Windows.Forms.TextBox fOMOrderIdTbox;
         private System.Windows.Forms.Label label12;
     }
 }

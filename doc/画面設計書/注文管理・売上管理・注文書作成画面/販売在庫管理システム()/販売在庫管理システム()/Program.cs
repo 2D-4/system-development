@@ -16,7 +16,7 @@ namespace 販売在庫管理システム__
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSalesManagement());
+            Application.Run(new frmOrderManagement());
         }
     }
 }
