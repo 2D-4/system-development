@@ -93,6 +93,7 @@
             this.fPCIdTBox.Name = "fPCIdTBox";
             this.fPCIdTBox.Size = new System.Drawing.Size(236, 30);
             this.fPCIdTBox.TabIndex = 4;
+            this.fPCIdTBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fPCIdTBox_KeyDown);
             // 
             // fPCTBox
             // 
@@ -101,6 +102,7 @@
             this.fPCTBox.Name = "fPCTBox";
             this.fPCTBox.Size = new System.Drawing.Size(236, 30);
             this.fPCTBox.TabIndex = 5;
+            this.fPCTBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fPCTBox_KeyDown);
             // 
             // fPCNPTBox
             // 
@@ -109,6 +111,7 @@
             this.fPCNPTBox.Name = "fPCNPTBox";
             this.fPCNPTBox.Size = new System.Drawing.Size(236, 30);
             this.fPCNPTBox.TabIndex = 6;
+            this.fPCNPTBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fPCNPTBox_KeyDown);
             // 
             // fPCRNPTBox
             // 
@@ -117,6 +120,7 @@
             this.fPCRNPTBox.Name = "fPCRNPTBox";
             this.fPCRNPTBox.Size = new System.Drawing.Size(236, 30);
             this.fPCRNPTBox.TabIndex = 7;
+            this.fPCRNPTBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fPCRNPTBox_KeyDown);
             // 
             // fPCBackBtn
             // 
@@ -155,6 +159,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmPassChange";
             this.Text = "パスワード変更画面";
+            this.Shown += new System.EventHandler(this.frmPassChange_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
