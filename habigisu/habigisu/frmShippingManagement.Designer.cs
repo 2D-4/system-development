@@ -28,61 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.FSMSlistBtn = new System.Windows.Forms.Button();
+            this.FSMNotSlistBtn = new System.Windows.Forms.Button();
+            this.FSMSearchBtn = new System.Windows.Forms.Button();
+            this.FSMBackBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.FSMIDlbl = new System.Windows.Forms.Label();
+            this.FSMNamelbl = new System.Windows.Forms.Label();
+            this.FSMOrderIDTbox = new System.Windows.Forms.TextBox();
+            this.FSMSIDTbox = new System.Windows.Forms.TextBox();
+            this.FSMEmpIDTbox = new System.Windows.Forms.TextBox();
+            this.FSMDatagridview = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.FSMDatagridview)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // FSMSlistBtn
             // 
-            this.button1.Location = new System.Drawing.Point(12, 9);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(160, 60);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "出庫一覧";
-            this.button1.UseVisualStyleBackColor = true;
+            this.FSMSlistBtn.Location = new System.Drawing.Point(12, 9);
+            this.FSMSlistBtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.FSMSlistBtn.Name = "FSMSlistBtn";
+            this.FSMSlistBtn.Size = new System.Drawing.Size(160, 60);
+            this.FSMSlistBtn.TabIndex = 0;
+            this.FSMSlistBtn.Text = "出庫一覧";
+            this.FSMSlistBtn.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // FSMNotSlistBtn
             // 
-            this.button2.Location = new System.Drawing.Point(178, 9);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(160, 60);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "未出庫一覧";
-            this.button2.UseVisualStyleBackColor = true;
+            this.FSMNotSlistBtn.Location = new System.Drawing.Point(178, 9);
+            this.FSMNotSlistBtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.FSMNotSlistBtn.Name = "FSMNotSlistBtn";
+            this.FSMNotSlistBtn.Size = new System.Drawing.Size(160, 60);
+            this.FSMNotSlistBtn.TabIndex = 1;
+            this.FSMNotSlistBtn.Text = "未出庫一覧";
+            this.FSMNotSlistBtn.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // FSMSearchBtn
             // 
-            this.button3.Location = new System.Drawing.Point(921, 77);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "検索";
-            this.button3.UseVisualStyleBackColor = true;
+            this.FSMSearchBtn.Location = new System.Drawing.Point(921, 77);
+            this.FSMSearchBtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.FSMSearchBtn.Name = "FSMSearchBtn";
+            this.FSMSearchBtn.Size = new System.Drawing.Size(120, 50);
+            this.FSMSearchBtn.TabIndex = 2;
+            this.FSMSearchBtn.Text = "検索";
+            this.FSMSearchBtn.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // FSMBackBtn
             // 
-            this.button4.Location = new System.Drawing.Point(921, 477);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 50);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "戻る";
-            this.button4.UseVisualStyleBackColor = true;
+            this.FSMBackBtn.Location = new System.Drawing.Point(921, 477);
+            this.FSMBackBtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.FSMBackBtn.Name = "FSMBackBtn";
+            this.FSMBackBtn.Size = new System.Drawing.Size(120, 50);
+            this.FSMBackBtn.TabIndex = 3;
+            this.FSMBackBtn.Text = "戻る";
+            this.FSMBackBtn.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -111,81 +111,81 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "社員ID：";
             // 
-            // label4
+            // FSMIDlbl
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(907, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 23);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "社員ID";
+            this.FSMIDlbl.AutoSize = true;
+            this.FSMIDlbl.Location = new System.Drawing.Point(907, 9);
+            this.FSMIDlbl.Name = "FSMIDlbl";
+            this.FSMIDlbl.Size = new System.Drawing.Size(57, 23);
+            this.FSMIDlbl.TabIndex = 7;
+            this.FSMIDlbl.Text = "社員ID";
             // 
-            // label5
+            // FSMNamelbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(981, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 23);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "社員名";
+            this.FSMNamelbl.AutoSize = true;
+            this.FSMNamelbl.Location = new System.Drawing.Point(981, 9);
+            this.FSMNamelbl.Name = "FSMNamelbl";
+            this.FSMNamelbl.Size = new System.Drawing.Size(55, 23);
+            this.FSMNamelbl.TabIndex = 8;
+            this.FSMNamelbl.Text = "社員名";
             // 
-            // textBox1
+            // FSMOrderIDTbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 88);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 30);
-            this.textBox1.TabIndex = 9;
+            this.FSMOrderIDTbox.Location = new System.Drawing.Point(73, 88);
+            this.FSMOrderIDTbox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.FSMOrderIDTbox.Name = "FSMOrderIDTbox";
+            this.FSMOrderIDTbox.Size = new System.Drawing.Size(220, 30);
+            this.FSMOrderIDTbox.TabIndex = 9;
             // 
-            // textBox2
+            // FSMSIDTbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(377, 88);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(220, 30);
-            this.textBox2.TabIndex = 10;
+            this.FSMSIDTbox.Location = new System.Drawing.Point(377, 88);
+            this.FSMSIDTbox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.FSMSIDTbox.Name = "FSMSIDTbox";
+            this.FSMSIDTbox.Size = new System.Drawing.Size(220, 30);
+            this.FSMSIDTbox.TabIndex = 10;
             // 
-            // textBox3
+            // FSMEmpIDTbox
             // 
-            this.textBox3.Location = new System.Drawing.Point(683, 88);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(220, 30);
-            this.textBox3.TabIndex = 11;
+            this.FSMEmpIDTbox.Location = new System.Drawing.Point(683, 88);
+            this.FSMEmpIDTbox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.FSMEmpIDTbox.Name = "FSMEmpIDTbox";
+            this.FSMEmpIDTbox.Size = new System.Drawing.Size(220, 30);
+            this.FSMEmpIDTbox.TabIndex = 11;
             // 
-            // dataGridView1
+            // FSMDatagridview
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 137);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1050, 330);
-            this.dataGridView1.TabIndex = 12;
+            this.FSMDatagridview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FSMDatagridview.Location = new System.Drawing.Point(2, 137);
+            this.FSMDatagridview.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.FSMDatagridview.Name = "FSMDatagridview";
+            this.FSMDatagridview.RowTemplate.Height = 24;
+            this.FSMDatagridview.Size = new System.Drawing.Size(1050, 330);
+            this.FSMDatagridview.TabIndex = 12;
             // 
             // frmShippingManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 533);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.FSMDatagridview);
+            this.Controls.Add(this.FSMEmpIDTbox);
+            this.Controls.Add(this.FSMSIDTbox);
+            this.Controls.Add(this.FSMOrderIDTbox);
+            this.Controls.Add(this.FSMNamelbl);
+            this.Controls.Add(this.FSMIDlbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.FSMBackBtn);
+            this.Controls.Add(this.FSMSearchBtn);
+            this.Controls.Add(this.FSMNotSlistBtn);
+            this.Controls.Add(this.FSMSlistBtn);
             this.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "frmShippingManagement";
             this.Text = "出庫管理";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FSMDatagridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,18 +193,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button FSMSlistBtn;
+        private System.Windows.Forms.Button FSMNotSlistBtn;
+        private System.Windows.Forms.Button FSMSearchBtn;
+        private System.Windows.Forms.Button FSMBackBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label FSMIDlbl;
+        private System.Windows.Forms.Label FSMNamelbl;
+        private System.Windows.Forms.TextBox FSMOrderIDTbox;
+        private System.Windows.Forms.TextBox FSMSIDTbox;
+        private System.Windows.Forms.TextBox FSMEmpIDTbox;
+        private System.Windows.Forms.DataGridView FSMDatagridview;
     }
 }
