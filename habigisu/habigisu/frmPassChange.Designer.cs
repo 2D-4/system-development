@@ -38,6 +38,7 @@
             this.fPCRNPTBox = new System.Windows.Forms.TextBox();
             this.fPCBackBtn = new System.Windows.Forms.Button();
             this.fPCChangeBtn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +67,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(160, 184);
+            this.label3.Location = new System.Drawing.Point(159, 204);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 23);
             this.label3.TabIndex = 2;
@@ -77,7 +78,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(100, 229);
+            this.label4.Location = new System.Drawing.Point(100, 275);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(205, 23);
             this.label4.TabIndex = 3;
@@ -90,16 +91,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.fPCIdTBox.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.fPCIdTBox.Location = new System.Drawing.Point(305, 62);
+            this.fPCIdTBox.MaxLength = 7;
             this.fPCIdTBox.Name = "fPCIdTBox";
-            this.fPCIdTBox.Size = new System.Drawing.Size(236, 30);
+            this.fPCIdTBox.Size = new System.Drawing.Size(235, 30);
             this.fPCIdTBox.TabIndex = 4;
             this.fPCIdTBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fPCIdTBox_KeyDown);
+            this.fPCIdTBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fPCIdTBox_KeyPress);
             // 
             // fPCTBox
             // 
             this.fPCTBox.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.fPCTBox.Location = new System.Drawing.Point(305, 109);
+            this.fPCTBox.MaxLength = 16;
             this.fPCTBox.Name = "fPCTBox";
+            this.fPCTBox.PasswordChar = '*';
             this.fPCTBox.Size = new System.Drawing.Size(236, 30);
             this.fPCTBox.TabIndex = 5;
             this.fPCTBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fPCTBox_KeyDown);
@@ -107,8 +112,10 @@
             // fPCNPTBox
             // 
             this.fPCNPTBox.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.fPCNPTBox.Location = new System.Drawing.Point(305, 181);
+            this.fPCNPTBox.Location = new System.Drawing.Point(304, 201);
+            this.fPCNPTBox.MaxLength = 16;
             this.fPCNPTBox.Name = "fPCNPTBox";
+            this.fPCNPTBox.PasswordChar = '*';
             this.fPCNPTBox.Size = new System.Drawing.Size(236, 30);
             this.fPCNPTBox.TabIndex = 6;
             this.fPCNPTBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fPCNPTBox_KeyDown);
@@ -116,8 +123,10 @@
             // fPCRNPTBox
             // 
             this.fPCRNPTBox.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.fPCRNPTBox.Location = new System.Drawing.Point(305, 226);
+            this.fPCRNPTBox.Location = new System.Drawing.Point(305, 272);
+            this.fPCRNPTBox.MaxLength = 16;
             this.fPCRNPTBox.Name = "fPCRNPTBox";
+            this.fPCRNPTBox.PasswordChar = '*';
             this.fPCRNPTBox.Size = new System.Drawing.Size(236, 30);
             this.fPCRNPTBox.TabIndex = 7;
             this.fPCRNPTBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fPCRNPTBox_KeyDown);
@@ -125,7 +134,7 @@
             // fPCBackBtn
             // 
             this.fPCBackBtn.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fPCBackBtn.Location = new System.Drawing.Point(212, 300);
+            this.fPCBackBtn.Location = new System.Drawing.Point(211, 335);
             this.fPCBackBtn.Name = "fPCBackBtn";
             this.fPCBackBtn.Size = new System.Drawing.Size(90, 28);
             this.fPCBackBtn.TabIndex = 8;
@@ -135,18 +144,31 @@
             // fPCChangeBtn
             // 
             this.fPCChangeBtn.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fPCChangeBtn.Location = new System.Drawing.Point(337, 300);
+            this.fPCChangeBtn.Location = new System.Drawing.Point(336, 335);
             this.fPCChangeBtn.Name = "fPCChangeBtn";
             this.fPCChangeBtn.Size = new System.Drawing.Size(90, 28);
             this.fPCChangeBtn.TabIndex = 9;
             this.fPCChangeBtn.Text = "変更する";
             this.fPCChangeBtn.UseVisualStyleBackColor = true;
+            this.fPCChangeBtn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fPCChangeBtn_KeyDown);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label5.Location = new System.Drawing.Point(107, 234);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(198, 23);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "(8文字以上半角英数字のみ)";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmPassChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 360);
+            this.ClientSize = new System.Drawing.Size(653, 398);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.fPCChangeBtn);
             this.Controls.Add(this.fPCBackBtn);
             this.Controls.Add(this.fPCRNPTBox);
@@ -177,5 +199,6 @@
         private System.Windows.Forms.TextBox fPCRNPTBox;
         private System.Windows.Forms.Button fPCBackBtn;
         private System.Windows.Forms.Button fPCChangeBtn;
+        private System.Windows.Forms.Label label5;
     }
 }
