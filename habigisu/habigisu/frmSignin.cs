@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace login
+namespace habigisu
 {
     public partial class frmSignin : Form
     {
@@ -57,29 +57,33 @@ namespace login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            OleDbDataAdapter da = new OleDbDataAdapter(); //データアダプタオブジェクト
-            OleDbCommand cmd = new OleDbCommand();        //コマンドオブジェクト
-            string sid = fSIdTBox.Text;
-            string spass = fSPassTBox.Text;
-            cmd.Connection = cn;
-            cmd.CommandText = "SELECT * FROM Member WHERE ID=@id AND Pass=@pass";
-            da.SelectCommand = cmd;
-            cmd.Parameters.AddWithValue("@id", sid);         //IDのパラメータ
-            cmd.Parameters.AddWithValue("@pass", spass);     //Passのパラメータ
-            DataTable dt = new DataTable();
-            da.Fill(dt);
 
-            if (dt.Rows.Count > 0)    //データテーブルの行数
-            {
-                this.Hide();
-                frmMain fmM = new frmMain();
-                fmM.Show();
-            }
-            else
-            {
-                MessageBox.Show("ID、パスワードを確認してください。", "WinSystem02");
-                fSIdTBox.Focus();
-            }
+            this.Hide();//仮置きコード（いずれ消す）
+            habigisu.frmOrderStockCreation fmO = new habigisu.frmOrderStockCreation();
+            fmO.Show();
+            //OleDbDataAdapter da = new OleDbDataAdapter(); //データアダプタオブジェクト
+            //OleDbCommand cmd = new OleDbCommand();        //コマンドオブジェクト
+            //string sid = fSIdTBox.Text;
+            //string spass = fSPassTBox.Text;
+            //cmd.Connection = cn;
+            //cmd.CommandText = "SELECT * FROM Member WHERE ID=@id AND Pass=@pass";
+            //da.SelectCommand = cmd;
+            //cmd.Parameters.AddWithValue("@id", sid);         //IDのパラメータ
+            //cmd.Parameters.AddWithValue("@pass", spass);     //Passのパラメータ
+            //DataTable dt = new DataTable();
+            //da.Fill(dt);
+
+            //if (dt.Rows.Count > 0)    //データテーブルの行数
+            //{
+            //    this.Hide();
+            //    habigisu.frmMain fmM = new habigisu.frmMain();
+            //    fmM.Show();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("ID、パスワードを確認してください。", "WinSystem02");
+            //    fSIdTBox.Focus();
+            //}
         }
 
         private void btnCansel_Click(object sender, EventArgs e)

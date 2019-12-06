@@ -70,8 +70,11 @@ namespace habigisu
 
             if (result == DialogResult.OK)
             {
-                
-                //書類生成のコードを打ち込む予定
+                savedata();
+                //System.IO.StreamWriter sw = new System.IO.StreamWriter(
+                //    "C:/Users/B8035/Desktop/上柴進捗/test.txt", false, System.Text.Encoding.Default);
+                //sw.WriteLine("うまくいきよったか？");
+                //sw.Close();
             }
         }
 
@@ -79,6 +82,29 @@ namespace habigisu
         {
             //this.Hide();
             //frmOrderStockManegement.Show();
+        }
+
+        private void frmOrderStockCreation_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("終了しますか？", "終了確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; //画面を閉じようとすると確認ポップ画面を出す
+            }
+        }
+
+
+        private void savedata()
+        {
+            string path = "発注書.csv"; //出力ファイル
+            string strData = ""; //一行分のデータ
+            System.IO.StreamWriter sw = new System.IO.StreamWriter(
+                path, false, System.Text.Encoding.Default);
+            foreach (habigisu.frmOrderStockCreation.)
+            {
+                strData = 商品名
+                    　　+ 数量
+            }
         }
     }
 }

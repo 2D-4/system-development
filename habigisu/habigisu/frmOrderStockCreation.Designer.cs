@@ -119,6 +119,7 @@
             this.Controls.Add(this.fOSidlabel);
             this.Name = "frmOrderStockCreation";
             this.Text = "frmOrderStockCreation";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmOrderStockCreation_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.fOSDataGridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

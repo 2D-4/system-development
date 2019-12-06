@@ -1,4 +1,4 @@
-﻿namespace login
+﻿namespace habigisu
 {
     partial class frmSignin
     {
@@ -70,7 +70,7 @@
             // 
             this.fSPassTBox.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.fSPassTBox.Location = new System.Drawing.Point(304, 232);
-            this.fSPassTBox.MaxLength = 50;
+            this.fSPassTBox.MaxLength = 16;
             this.fSPassTBox.Name = "fSPassTBox";
             this.fSPassTBox.PasswordChar = '*';
             this.fSPassTBox.Size = new System.Drawing.Size(232, 22);
@@ -97,7 +97,7 @@
             this.fSSigninBtn.UseVisualStyleBackColor = true;
             this.fSSigninBtn.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // Form1
+            // frmSignin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -108,7 +108,7 @@
             this.Controls.Add(this.fSIdTBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "frmSignin";
             this.Text = "ログイン画面";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
