@@ -15,6 +15,12 @@ namespace habigisu
         public frmShippingManagement()
         {
             InitializeComponent();
+
+            //社員IDを表示する
+            FSMIDlbl.Text = ;
+
+
+
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace login
+namespace habigisu
 {
     public partial class frmSignin : Form
     {

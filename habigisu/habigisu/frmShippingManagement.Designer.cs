@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.FSMIDlbl = new System.Windows.Forms.Label();
-            this.FSMNamelbl = new System.Windows.Forms.Label();
             this.FSMOrderIDTbox = new System.Windows.Forms.TextBox();
             this.FSMSIDTbox = new System.Windows.Forms.TextBox();
             this.FSMEmpIDTbox = new System.Windows.Forms.TextBox();
@@ -114,20 +113,11 @@
             // FSMIDlbl
             // 
             this.FSMIDlbl.AutoSize = true;
-            this.FSMIDlbl.Location = new System.Drawing.Point(907, 9);
+            this.FSMIDlbl.Location = new System.Drawing.Point(957, 9);
             this.FSMIDlbl.Name = "FSMIDlbl";
             this.FSMIDlbl.Size = new System.Drawing.Size(57, 23);
             this.FSMIDlbl.TabIndex = 7;
             this.FSMIDlbl.Text = "社員ID";
-            // 
-            // FSMNamelbl
-            // 
-            this.FSMNamelbl.AutoSize = true;
-            this.FSMNamelbl.Location = new System.Drawing.Point(981, 9);
-            this.FSMNamelbl.Name = "FSMNamelbl";
-            this.FSMNamelbl.Size = new System.Drawing.Size(55, 23);
-            this.FSMNamelbl.TabIndex = 8;
-            this.FSMNamelbl.Text = "社員名";
             // 
             // FSMOrderIDTbox
             // 
@@ -172,7 +162,6 @@
             this.Controls.Add(this.FSMEmpIDTbox);
             this.Controls.Add(this.FSMSIDTbox);
             this.Controls.Add(this.FSMOrderIDTbox);
-            this.Controls.Add(this.FSMNamelbl);
             this.Controls.Add(this.FSMIDlbl);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -201,7 +190,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label FSMIDlbl;
-        private System.Windows.Forms.Label FSMNamelbl;
         private System.Windows.Forms.TextBox FSMOrderIDTbox;
         private System.Windows.Forms.TextBox FSMSIDTbox;
         private System.Windows.Forms.TextBox FSMEmpIDTbox;
