@@ -35,6 +35,8 @@
             this.fOSconfirmBtn = new System.Windows.Forms.Button();
             this.fOSbackBtn = new System.Windows.Forms.Button();
             this.fOSDataGridview = new System.Windows.Forms.DataGridView();
+            this.fOStB1 = new System.Windows.Forms.TextBox();
+            this.fOSupdatelabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fOSDataGridview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +60,7 @@
             // 
             // fOSupdateBtn
             // 
-            this.fOSupdateBtn.Location = new System.Drawing.Point(12, 393);
+            this.fOSupdateBtn.Location = new System.Drawing.Point(124, 394);
             this.fOSupdateBtn.Name = "fOSupdateBtn";
             this.fOSupdateBtn.Size = new System.Drawing.Size(88, 45);
             this.fOSupdateBtn.TabIndex = 2;
@@ -68,7 +70,7 @@
             // 
             // fOSCancelBtn
             // 
-            this.fOSCancelBtn.Location = new System.Drawing.Point(130, 393);
+            this.fOSCancelBtn.Location = new System.Drawing.Point(12, 395);
             this.fOSCancelBtn.Name = "fOSCancelBtn";
             this.fOSCancelBtn.Size = new System.Drawing.Size(88, 45);
             this.fOSCancelBtn.TabIndex = 3;
@@ -78,7 +80,8 @@
             // 
             // fOSconfirmBtn
             // 
-            this.fOSconfirmBtn.Location = new System.Drawing.Point(579, 393);
+            this.fOSconfirmBtn.Font = new System.Drawing.Font("MS UI Gothic", 12F);
+            this.fOSconfirmBtn.Location = new System.Drawing.Point(584, 394);
             this.fOSconfirmBtn.Name = "fOSconfirmBtn";
             this.fOSconfirmBtn.Size = new System.Drawing.Size(88, 45);
             this.fOSconfirmBtn.TabIndex = 4;
@@ -88,7 +91,7 @@
             // 
             // fOSbackBtn
             // 
-            this.fOSbackBtn.Location = new System.Drawing.Point(700, 393);
+            this.fOSbackBtn.Location = new System.Drawing.Point(700, 394);
             this.fOSbackBtn.Name = "fOSbackBtn";
             this.fOSbackBtn.Size = new System.Drawing.Size(88, 45);
             this.fOSbackBtn.TabIndex = 5;
@@ -105,11 +108,30 @@
             this.fOSDataGridview.Size = new System.Drawing.Size(776, 337);
             this.fOSDataGridview.TabIndex = 6;
             // 
+            // fOStB1
+            // 
+            this.fOStB1.Location = new System.Drawing.Point(335, 406);
+            this.fOStB1.Name = "fOStB1";
+            this.fOStB1.Size = new System.Drawing.Size(100, 22);
+            this.fOStB1.TabIndex = 7;
+            // 
+            // fOSupdatelabel
+            // 
+            this.fOSupdatelabel.AutoSize = true;
+            this.fOSupdatelabel.Font = new System.Drawing.Font("MS UI Gothic", 10F);
+            this.fOSupdatelabel.Location = new System.Drawing.Point(244, 407);
+            this.fOSupdatelabel.Name = "fOSupdatelabel";
+            this.fOSupdatelabel.Size = new System.Drawing.Size(85, 17);
+            this.fOSupdatelabel.TabIndex = 8;
+            this.fOSupdatelabel.Text = "発注数量：";
+            // 
             // frmOrderStockCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.fOSupdatelabel);
+            this.Controls.Add(this.fOStB1);
             this.Controls.Add(this.fOSDataGridview);
             this.Controls.Add(this.fOSbackBtn);
             this.Controls.Add(this.fOSconfirmBtn);
@@ -120,6 +142,7 @@
             this.Name = "frmOrderStockCreation";
             this.Text = "frmOrderStockCreation";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmOrderStockCreation_FormClosing);
+            this.Load += new System.EventHandler(this.frmOrderStockCreation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fOSDataGridview)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,5 +158,7 @@
         private System.Windows.Forms.Button fOSconfirmBtn;
         private System.Windows.Forms.Button fOSbackBtn;
         private System.Windows.Forms.DataGridView fOSDataGridview;
+        private System.Windows.Forms.TextBox fOStB1;
+        private System.Windows.Forms.Label fOSupdatelabel;
     }
 }
