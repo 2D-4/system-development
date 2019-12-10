@@ -49,9 +49,10 @@
             this.FSMSlistBtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.FSMSlistBtn.Name = "FSMSlistBtn";
             this.FSMSlistBtn.Size = new System.Drawing.Size(160, 60);
-            this.FSMSlistBtn.TabIndex = 0;
+            this.FSMSlistBtn.TabIndex = 1;
             this.FSMSlistBtn.Text = "出庫一覧";
             this.FSMSlistBtn.UseVisualStyleBackColor = true;
+            this.FSMSlistBtn.Click += new System.EventHandler(this.FSMSlistBtn_Click);
             // 
             // FSMNotSlistBtn
             // 
@@ -59,9 +60,10 @@
             this.FSMNotSlistBtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.FSMNotSlistBtn.Name = "FSMNotSlistBtn";
             this.FSMNotSlistBtn.Size = new System.Drawing.Size(160, 60);
-            this.FSMNotSlistBtn.TabIndex = 1;
+            this.FSMNotSlistBtn.TabIndex = 2;
             this.FSMNotSlistBtn.Text = "未出庫一覧";
             this.FSMNotSlistBtn.UseVisualStyleBackColor = true;
+            this.FSMNotSlistBtn.Click += new System.EventHandler(this.FSMNotSlistBtn_Click);
             // 
             // FSMSearchBtn
             // 
@@ -69,9 +71,10 @@
             this.FSMSearchBtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.FSMSearchBtn.Name = "FSMSearchBtn";
             this.FSMSearchBtn.Size = new System.Drawing.Size(120, 50);
-            this.FSMSearchBtn.TabIndex = 2;
+            this.FSMSearchBtn.TabIndex = 6;
             this.FSMSearchBtn.Text = "検索";
             this.FSMSearchBtn.UseVisualStyleBackColor = true;
+            this.FSMSearchBtn.Click += new System.EventHandler(this.FSMSearchBtn_Click);
             // 
             // FSMBackBtn
             // 
@@ -79,9 +82,10 @@
             this.FSMBackBtn.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.FSMBackBtn.Name = "FSMBackBtn";
             this.FSMBackBtn.Size = new System.Drawing.Size(120, 50);
-            this.FSMBackBtn.TabIndex = 3;
+            this.FSMBackBtn.TabIndex = 7;
             this.FSMBackBtn.Text = "戻る";
             this.FSMBackBtn.UseVisualStyleBackColor = true;
+            this.FSMBackBtn.Click += new System.EventHandler(this.FSMBackBtn_Click);
             // 
             // label1
             // 
@@ -89,7 +93,7 @@
             this.label1.Location = new System.Drawing.Point(8, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 23);
-            this.label1.TabIndex = 4;
+            this.label1.TabIndex = 0;
             this.label1.Text = "注文ID：";
             // 
             // label2
@@ -98,7 +102,7 @@
             this.label2.Location = new System.Drawing.Point(312, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 23);
-            this.label2.TabIndex = 5;
+            this.label2.TabIndex = 0;
             this.label2.Text = "出庫ID：";
             // 
             // label3
@@ -107,7 +111,7 @@
             this.label3.Location = new System.Drawing.Point(617, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 23);
-            this.label3.TabIndex = 6;
+            this.label3.TabIndex = 0;
             this.label3.Text = "社員ID：";
             // 
             // FSMIDlbl
@@ -116,7 +120,7 @@
             this.FSMIDlbl.Location = new System.Drawing.Point(957, 9);
             this.FSMIDlbl.Name = "FSMIDlbl";
             this.FSMIDlbl.Size = new System.Drawing.Size(57, 23);
-            this.FSMIDlbl.TabIndex = 7;
+            this.FSMIDlbl.TabIndex = 0;
             this.FSMIDlbl.Text = "社員ID";
             // 
             // FSMOrderIDTbox
@@ -125,7 +129,7 @@
             this.FSMOrderIDTbox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.FSMOrderIDTbox.Name = "FSMOrderIDTbox";
             this.FSMOrderIDTbox.Size = new System.Drawing.Size(220, 30);
-            this.FSMOrderIDTbox.TabIndex = 9;
+            this.FSMOrderIDTbox.TabIndex = 3;
             // 
             // FSMSIDTbox
             // 
@@ -133,7 +137,7 @@
             this.FSMSIDTbox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.FSMSIDTbox.Name = "FSMSIDTbox";
             this.FSMSIDTbox.Size = new System.Drawing.Size(220, 30);
-            this.FSMSIDTbox.TabIndex = 10;
+            this.FSMSIDTbox.TabIndex = 4;
             // 
             // FSMEmpIDTbox
             // 
@@ -141,7 +145,7 @@
             this.FSMEmpIDTbox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.FSMEmpIDTbox.Name = "FSMEmpIDTbox";
             this.FSMEmpIDTbox.Size = new System.Drawing.Size(220, 30);
-            this.FSMEmpIDTbox.TabIndex = 11;
+            this.FSMEmpIDTbox.TabIndex = 5;
             // 
             // FSMDatagridview
             // 
@@ -151,13 +155,13 @@
             this.FSMDatagridview.Name = "FSMDatagridview";
             this.FSMDatagridview.RowTemplate.Height = 24;
             this.FSMDatagridview.Size = new System.Drawing.Size(1050, 330);
-            this.FSMDatagridview.TabIndex = 12;
+            this.FSMDatagridview.TabIndex = 0;
             // 
             // frmShippingManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1052, 533);
+            this.ClientSize = new System.Drawing.Size(1058, 533);
             this.Controls.Add(this.FSMDatagridview);
             this.Controls.Add(this.FSMEmpIDTbox);
             this.Controls.Add(this.FSMSIDTbox);

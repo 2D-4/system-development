@@ -19,8 +19,28 @@ namespace habigisu
             //社員IDを表示する
             FSMIDlbl.Text = ;
 
+            
 
+        }
 
+        private void FSMSlistBtn_Click(object sender, EventArgs e)
+        {
+        // ("SELECT *　from  テーブル名Issue ") 出庫一覧
+        }
+
+        private void FSMNotSlistBtn_Click(object sender, EventArgs e)
+        {
+            //未出庫一覧
+        }
+
+        private void FSMSearchBtn_Click(object sender, EventArgs e)
+        {
+            //検索
+        }
+
+        private void FSMBackBtn_Click(object sender, EventArgs e)
+        {
+            this.Close(); //閉じる
         }
     }
 }
