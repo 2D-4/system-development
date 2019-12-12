@@ -39,6 +39,8 @@
             this.fPCBackBtn = new System.Windows.Forms.Button();
             this.fPCChangeBtn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.Warning = new System.Windows.Forms.Label();
+            this.Warning2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -67,7 +69,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label3.Location = new System.Drawing.Point(144, 204);
+            this.label3.Location = new System.Drawing.Point(145, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(145, 23);
             this.label3.TabIndex = 2;
@@ -78,7 +80,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(85, 275);
+            this.label4.Location = new System.Drawing.Point(85, 300);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(205, 23);
             this.label4.TabIndex = 3;
@@ -87,8 +89,6 @@
             // 
             // fPCIdTBox
             // 
-            this.fPCIdTBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.fPCIdTBox.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.fPCIdTBox.Location = new System.Drawing.Point(305, 62);
             this.fPCIdTBox.MaxLength = 7;
@@ -113,7 +113,7 @@
             // fPCNPTBox
             // 
             this.fPCNPTBox.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.fPCNPTBox.Location = new System.Drawing.Point(304, 201);
+            this.fPCNPTBox.Location = new System.Drawing.Point(305, 197);
             this.fPCNPTBox.MaxLength = 16;
             this.fPCNPTBox.Name = "fPCNPTBox";
             this.fPCNPTBox.PasswordChar = '*';
@@ -125,7 +125,7 @@
             // fPCRNPTBox
             // 
             this.fPCRNPTBox.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.fPCRNPTBox.Location = new System.Drawing.Point(305, 272);
+            this.fPCRNPTBox.Location = new System.Drawing.Point(305, 297);
             this.fPCRNPTBox.MaxLength = 16;
             this.fPCRNPTBox.Name = "fPCRNPTBox";
             this.fPCRNPTBox.PasswordChar = '*';
@@ -137,7 +137,7 @@
             // fPCBackBtn
             // 
             this.fPCBackBtn.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fPCBackBtn.Location = new System.Drawing.Point(211, 335);
+            this.fPCBackBtn.Location = new System.Drawing.Point(211, 370);
             this.fPCBackBtn.Name = "fPCBackBtn";
             this.fPCBackBtn.Size = new System.Drawing.Size(90, 28);
             this.fPCBackBtn.TabIndex = 8;
@@ -147,7 +147,7 @@
             // fPCChangeBtn
             // 
             this.fPCChangeBtn.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fPCChangeBtn.Location = new System.Drawing.Point(336, 335);
+            this.fPCChangeBtn.Location = new System.Drawing.Point(336, 370);
             this.fPCChangeBtn.Name = "fPCChangeBtn";
             this.fPCChangeBtn.Size = new System.Drawing.Size(97, 28);
             this.fPCChangeBtn.TabIndex = 9;
@@ -158,19 +158,43 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label5.Location = new System.Drawing.Point(92, 234);
+            this.label5.Font = new System.Drawing.Font("メイリオ", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label5.Location = new System.Drawing.Point(101, 233);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(198, 23);
+            this.label5.Size = new System.Drawing.Size(185, 21);
             this.label5.TabIndex = 10;
             this.label5.Text = "(8文字以上半角英数字のみ)";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Warning
+            // 
+            this.Warning.AutoSize = true;
+            this.Warning.Font = new System.Drawing.Font("メイリオ", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Warning.ForeColor = System.Drawing.Color.Red;
+            this.Warning.Location = new System.Drawing.Point(308, 233);
+            this.Warning.Name = "Warning";
+            this.Warning.Size = new System.Drawing.Size(42, 21);
+            this.Warning.TabIndex = 11;
+            this.Warning.Text = "aaaa";
+            // 
+            // Warning2
+            // 
+            this.Warning2.AutoSize = true;
+            this.Warning2.Font = new System.Drawing.Font("メイリオ", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Warning2.ForeColor = System.Drawing.Color.Red;
+            this.Warning2.Location = new System.Drawing.Point(308, 260);
+            this.Warning2.Name = "Warning2";
+            this.Warning2.Size = new System.Drawing.Size(42, 21);
+            this.Warning2.TabIndex = 12;
+            this.Warning2.Text = "aaaa";
             // 
             // frmPassChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(653, 398);
+            this.ClientSize = new System.Drawing.Size(655, 432);
+            this.Controls.Add(this.Warning2);
+            this.Controls.Add(this.Warning);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.fPCChangeBtn);
             this.Controls.Add(this.fPCBackBtn);
@@ -203,5 +227,7 @@
         private System.Windows.Forms.Button fPCBackBtn;
         private System.Windows.Forms.Button fPCChangeBtn;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Warning;
+        private System.Windows.Forms.Label Warning2;
     }
 }
