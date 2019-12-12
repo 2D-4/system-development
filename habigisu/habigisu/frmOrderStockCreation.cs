@@ -51,9 +51,8 @@ namespace habigisu
         {
             int selectrow = fOSDataGridview.CurrentCell.ColumnIndex;                 //選択されている行番号
             OleDbCommand cmd =
-                new OleDbCommand("UPDATE 発注数量 SET 発注数量 = @quantity WHERE 商品ID = @id", cn);
+                new OleDbCommand("UPDATE 発注詳細テーブル SET 発注数量 = @quantity ", cn);
             cmd.Parameters.AddWithValue("@quantity", fOStB1.Text);                 //数量のデータ
-            cmd.Parameters.AddWithValue("@id", fOSDataGridview.Rows[0].Cells["商品ID"].Value); //選択行
             try
             {
                 cn.Open();                 //コネクションを開く
