@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using habigisu;
 
 namespace login
 {
@@ -16,7 +17,7 @@ namespace login
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSignin());
+            Application.Run(new frmOrderManagement());
         }
     }
 }

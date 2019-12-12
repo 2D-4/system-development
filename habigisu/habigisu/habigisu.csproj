@@ -46,25 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmPassChange.cs">
+    <Compile Include="frmOrderCreation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPassChange.Designer.cs">
-      <DependentUpon>frmPassChange.cs</DependentUpon>
+    <Compile Include="frmOrderCreation.Designer.cs">
+      <DependentUpon>frmOrderCreation.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSignin.cs">
+    <Compile Include="frmOrderManagement.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSignin.Designer.cs">
-      <DependentUpon>frmSignin.cs</DependentUpon>
+    <Compile Include="frmOrderManagement.Designer.cs">
+      <DependentUpon>frmOrderManagement.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmPassChange.resx">
-      <DependentUpon>frmPassChange.cs</DependentUpon>
+    <EmbeddedResource Include="frmOrderCreation.resx">
+      <DependentUpon>frmOrderCreation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSignin.resx">
-      <DependentUpon>frmSignin.cs</DependentUpon>
+    <EmbeddedResource Include="frmOrderManagement.resx">
+      <DependentUpon>frmOrderManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
