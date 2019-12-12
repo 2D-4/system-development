@@ -77,65 +77,7 @@ namespace habigisu
 
         }
 
-        private void fOSYearlabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fOSYearCBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fOSMonthlabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fOSMonthCBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fOSDaylabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fOSDayCBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fOSYearlabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fOSYearCBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fOSMonthlabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fOSMonthCBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fOSDaylabel2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fOSDayCBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void fOSSearchBtn_Click(object sender, EventArgs e)
         {
@@ -163,6 +105,16 @@ namespace habigisu
         }
 
         private void fOSDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FosdtTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FosdtTimePicker2_ValueChanged(object sender, EventArgs e)
         {
 
         }

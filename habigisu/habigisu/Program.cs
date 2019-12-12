@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace login
+namespace habigisu
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace login
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSignin());
+            Application.Run(new frmOrderstockManegement());
         }
     }
 }
