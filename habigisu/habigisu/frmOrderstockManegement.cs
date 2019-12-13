@@ -14,6 +14,9 @@ namespace habigisu
     public partial class frmOrderstockManegement : Form
     {
         OleDbConnection cn = new OleDbConnection(); //グローバル変数　コネクションオブジェクト
+        private object habigisu;
+        private object fOSManegement;
+
         public frmOrderstockManegement()
         {
             InitializeComponent();
@@ -109,27 +112,68 @@ namespace habigisu
 
         private void fOSBackBtn_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //frmMain.Show();
+            this.Close();
+            fOSManegement.Show();
         }
 
         private void fOSSearchBtn_Click(object sender, EventArgs e)
         {
-           
+            //ValueType
         }
 
         private void fOSUpdateBtn_Click(object sender, EventArgs e)
         {
-            
+
+            int selectrow = dataGridView1.CurrentCell.RowIndex;         //選択されている行番号
+            OleDbCommand cmd =
+                new OleDbCommand("UPDATE Member SET Name = @name, PosID = @posid, TeamID = @teamid, " +
+                "Birthday = @birthday, Height = @height, Weight = @weight, BloodType = @bloodtype, " +
+                "ImageFile = @imgfile WHERE ID = @id", cn);
+            cmd.Parameters.AddWithValue("@name",
+                dataGridView1.Rows[selectrow].Cells["Name"].Value.ToString());
+            cmd.Parameters.AddWithValue("@posid",
+                dataGridView1.Rows[selectrow].Cells["PosID"].Value.ToString());
+            cmd.Parameters.AddWithValue("@teamid",
+                dataGridView1.Rows[selectrow].Cells["TeamID"].Value.ToString());
+            cmd.Parameters.AddWithValue("@birthday",
+                dataGridView1.Rows[selectrow].Cells["Birthday"].Value.ToString());
+            cmd.Parameters.AddWithValue("@height",
+                dataGridView1.Rows[selectrow].Cells["Height"].Value);
+            cmd.Parameters.AddWithValue("@weight",
+                dataGridView1.Rows[selectrow].Cells["Weight"].Value);
+            cmd.Parameters.AddWithValue("@bloodtype",
+                dataGridView1.Rows[selectrow].Cells["BloodType"].Value.ToString());
+            cmd.Parameters.AddWithValue("@imgfile",
+                dataGridView1.Rows[selectrow].Cells["ImageFile"].Value.ToString());
+            cmd.Parameters.AddWithValue("@id",
+                dataGridView1.Rows[selectrow].Cells["ID"].Value.ToString());
+            try
+            {
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "WinDB03");
+                cn.Close();
+                return;
+            }
+            MessageBox.Show("更新しました", "WinDB03");
+            dataload();
+            imgdisp();
+        }
+
+        private void imgdisp()
+        {
+            throw new NotImplementedException();
         }
 
         private void fOSFormBtn_Click(object sender, EventArgs e)
         {
-             void ChangeButton_Click(object  EventArgs )
-            {
-               //this. Hide();
-               // fOSFormBtn.Show();
-            }
+            frmOrderstockManegement form2 = new
+            frmOrderstockManegement();
+            form2.ShowDialog();
         }
 
         private void fOSConfirmBtn_Click(object sender, EventArgs e)
@@ -148,6 +192,11 @@ namespace habigisu
         }
 
         private void fOSdtPicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fOSDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

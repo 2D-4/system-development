@@ -104,9 +104,9 @@
             // 
             // fOSConfirmBtn
             // 
-            this.fOSConfirmBtn.Location = new System.Drawing.Point(634, 408);
+            this.fOSConfirmBtn.Location = new System.Drawing.Point(627, 408);
             this.fOSConfirmBtn.Name = "fOSConfirmBtn";
-            this.fOSConfirmBtn.Size = new System.Drawing.Size(85, 47);
+            this.fOSConfirmBtn.Size = new System.Drawing.Size(92, 47);
             this.fOSConfirmBtn.TabIndex = 5;
             this.fOSConfirmBtn.Text = "確定";
             this.fOSConfirmBtn.UseVisualStyleBackColor = true;
@@ -145,7 +145,7 @@
             // fOSNlabel
             // 
             this.fOSNlabel.AutoSize = true;
-            this.fOSNlabel.Location = new System.Drawing.Point(139, 67);
+            this.fOSNlabel.Location = new System.Drawing.Point(129, 67);
             this.fOSNlabel.Name = "fOSNlabel";
             this.fOSNlabel.Size = new System.Drawing.Size(67, 15);
             this.fOSNlabel.TabIndex = 9;
@@ -155,7 +155,7 @@
             // fOSMerchandiselabel
             // 
             this.fOSMerchandiselabel.AutoSize = true;
-            this.fOSMerchandiselabel.Location = new System.Drawing.Point(339, 67);
+            this.fOSMerchandiselabel.Location = new System.Drawing.Point(328, 67);
             this.fOSMerchandiselabel.Name = "fOSMerchandiselabel";
             this.fOSMerchandiselabel.Size = new System.Drawing.Size(67, 15);
             this.fOSMerchandiselabel.TabIndex = 10;
@@ -230,8 +230,9 @@
             this.fOSDataGridView1.Location = new System.Drawing.Point(12, 142);
             this.fOSDataGridView1.Name = "fOSDataGridView1";
             this.fOSDataGridView1.RowTemplate.Height = 24;
-            this.fOSDataGridView1.Size = new System.Drawing.Size(820, 260);
+            this.fOSDataGridView1.Size = new System.Drawing.Size(825, 260);
             this.fOSDataGridView1.TabIndex = 29;
+            this.fOSDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.fOSDataGridView1_CellContentClick);
             // 
             // fOSdtPicker1
             // 
@@ -253,7 +254,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 458);
+            this.ClientSize = new System.Drawing.Size(849, 458);
             this.Controls.Add(this.fOSdtPicker2);
             this.Controls.Add(this.fOSdtPicker1);
             this.Controls.Add(this.fOSDataGridView1);
