@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace habigisu
 {
-    OleDbConnection cn = new OleDbConnection(); //グローバル変数　コネクションオブジェクト
     public partial class frmOrderManagement : Form
     {
+        OleDbConnection cn = new OleDbConnection();
 
         public frmOrderManagement()
         {
@@ -23,40 +23,35 @@ namespace habigisu
         private void dataload()   //カスタム関数
         {
             cn.ConnectionString =
-                @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Habigisu.accdb;";
+                @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\DBJapan.accdb";
             dataload();
         }
 
         private void fOMBtn1_Click(object sender, EventArgs e)
         {
-            dataload();
-            OleDbDataAdapter da =
-                new OleDbDataAdapter("SELECT * FROM  注文テーブル", cn);
+            cn.ConnectionString =
+          @"Provider = Microsoft.ACE.OLEDB.12.0;Data Source = |DataDirectory|\DBJapan.accdb;";
+            OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Member ORDER BY ID", cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             fOMDataGridView.DataSource = dt;
-            fOMDataGridView.AllowUserToAddRows = false;    //最下行を非表示
-            fOMDataGridView.AutoResizeColumns();           //列の幅の自動調整
         }
 
         private void fOMBtn2_Click(object sender, EventArgs e)
         {
-            dataload();
-            OleDbDataAdapter da =
-                new OleDbDataAdapter("SELECT * FROM  未出庫テーブル);
+            cn.ConnectionString =
+          @"Provider = Microsoft.ACE.OLEDB.12.0;Data Source = |DataDirectory|\DBJapan.accdb;";
+            OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Member ORDER BY ID", cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             fOMDataGridView.DataSource = dt;
-            fOMDataGridView.AllowUserToAddRows = false;    //最下行を非表示
-            fOMDataGridView.AutoResizeColumns();           //列の幅の自動調整
         }
-
         private void fOMSearchBtn_Click(object sender, EventArgs e)
         {
             OleDbCommand cmd =
-               new OleDbCommand("SELECT " +
-               " " +
-               "WHERE 日にち BETWEEN @dtime1 AND @dtime2 ORDER BY ID");  //Birthdayが指定した間にある
+                new OleDbCommand("SELECT Name AS 名前,PosID AS ポジション,Birthday AS 誕生日," +
+                "Height AS 身長,Weight AS 体重,BloodType AS 血液型 FROM Member " +
+                "WHERE Birthday BETWEEN @dtime1 AND @dtime2 ORDER BY ID");  //Birthdayが指定した間にある
             cmd.Connection = cn;
             OleDbDataAdapter da = new OleDbDataAdapter();
             da.SelectCommand = cmd;
@@ -71,9 +66,8 @@ namespace habigisu
             fOMDataGridView.AllowUserToAddRows = false;   //最下行を非表示
             fOMDataGridView.AutoResizeColumns();          //列の幅の自動調整
         }
-
-        private void fOMUpdateBtn_Click(object sender, EventArgs e)
-        {
+            private void fOMUpdateBtn_Click(object sender, EventArgs e)
+            {
             int selectrow = fOMDataGridView.CurrentCell.RowIndex;         //選択されている行番号
             OleDbCommand cmd =
                 new OleDbCommand("UPDATE Member SET Name = @name, PosID = @posid, TeamID = @teamid, " +
@@ -105,47 +99,44 @@ namespace habigisu
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "WinDB03");
                 cn.Close();
                 return;
             }
-            MessageBox.Show("更新しました");
+            MessageBox.Show("更新しました", "WinDB03");
             dataload();
-            imgdisp();
-        }
+            }
 
-        private void fOMMakeBtn_Click(object sender, EventArgs e)
-        {
-            Form2 frmOrderCreation = new frmOrderCreation();
-            Form2.Show();
-        }
+            private void fOMMakeBtn_Click(object sender, EventArgs e)
+            {
+                frmOrderCreation form2 = new frmOrderCreation();
+                form2.ShowDialog();
+            }
 
-        private void fOMConfirmBtn_Click(object sender, EventArgs e)
-        {
+            private void fOMConfirmBtn_Click(object sender, EventArgs e)
+            {
 
-        }
+            }
 
-        private void fOMBackBtn_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+            private void fOMBackBtn_Click(object sender, EventArgs e)
+            {
+                this.Close();
+            }
 
-        private void fOMStatusTbox_TextChanged(object sender, EventArgs e)
-        {
+            private void fOMStatusTbox_TextChanged(object sender, EventArgs e)
+            {
 
-        }
+            }
 
-        private void fOMOrderIdTbox_TextChanged(object sender, EventArgs e)
-        {
+            private void fOMOrderIdTbox_TextChanged(object sender, EventArgs e)
+            {
 
-        }
+            }
 
-        private void fOMProductTbox_TextChanged(object sender, EventArgs e)
-        {
+            private void fOMProductTbox_TextChanged(object sender, EventArgs e)
+            {
 
-        }
-
-
+            }
     }
 }
 

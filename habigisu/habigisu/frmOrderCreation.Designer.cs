@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.fOCDataGridView = new System.Windows.Forms.DataGridView();
             this.fOCBackBtn = new System.Windows.Forms.Button();
             this.fOCSaveBtn = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.fOCDeleteBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.fOCDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -46,14 +46,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "注文内容一覧";
             // 
-            // dataGridView1
+            // fOCDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(1, 52);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(795, 357);
-            this.dataGridView1.TabIndex = 1;
+            this.fOCDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.fOCDataGridView.Location = new System.Drawing.Point(1, 52);
+            this.fOCDataGridView.Name = "fOCDataGridView";
+            this.fOCDataGridView.RowTemplate.Height = 24;
+            this.fOCDataGridView.Size = new System.Drawing.Size(795, 357);
+            this.fOCDataGridView.TabIndex = 1;
             // 
             // fOCBackBtn
             // 
@@ -63,6 +63,7 @@
             this.fOCBackBtn.TabIndex = 2;
             this.fOCBackBtn.Text = "戻る";
             this.fOCBackBtn.UseVisualStyleBackColor = true;
+            this.fOCBackBtn.Click += new System.EventHandler(this.fOCBackBtn_Click);
             // 
             // fOCSaveBtn
             // 
@@ -74,29 +75,30 @@
             this.fOCSaveBtn.UseVisualStyleBackColor = true;
             this.fOCSaveBtn.Click += new System.EventHandler(this.fOCSaveBtn_Click);
             // 
-            // button3
+            // fOCDeleteBtn
             // 
-            this.button3.Location = new System.Drawing.Point(1, 415);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 32);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "取り消し";
-            this.button3.UseVisualStyleBackColor = true;
+            this.fOCDeleteBtn.Location = new System.Drawing.Point(1, 415);
+            this.fOCDeleteBtn.Name = "fOCDeleteBtn";
+            this.fOCDeleteBtn.Size = new System.Drawing.Size(103, 32);
+            this.fOCDeleteBtn.TabIndex = 4;
+            this.fOCDeleteBtn.Text = "取り消し";
+            this.fOCDeleteBtn.UseVisualStyleBackColor = true;
+            this.fOCDeleteBtn.Click += new System.EventHandler(this.fOCDeleteBtn_Click);
             // 
             // frmOrderCreation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.fOCDeleteBtn);
             this.Controls.Add(this.fOCSaveBtn);
             this.Controls.Add(this.fOCBackBtn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.fOCDataGridView);
             this.Controls.Add(this.label1);
             this.Name = "frmOrderCreation";
             this.Text = "注文書作成画面";
             this.Load += new System.EventHandler(this.frmOrderCreation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fOCDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,9 +107,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView fOCDataGridView;
         private System.Windows.Forms.Button fOCBackBtn;
         private System.Windows.Forms.Button fOCSaveBtn;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button fOCDeleteBtn;
     }
 }
