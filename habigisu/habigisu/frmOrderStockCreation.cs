@@ -24,14 +24,23 @@ namespace habigisu
             cn.ConnectionString =
                 @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\habigisu.accdb;";
             dataload();
+
+            string str1 = frmSignin.frmSigninInstance.fSIdTBoxText;
+
+            fOSidlabel.Text = str1;
         }
-        
+
         private void frmOrderStockCreation_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("終了しますか？", "終了確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            DialogResult result = MessageBox.Show("今の画面を終了しますか？", "終了確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (result == DialogResult.No)
             {
                 e.Cancel = true; //画面を閉じようとすると確認ポップ画面を出す
+            }
+            else
+            {
+                //this.Hide();
+                //frmOrderStockManegement.Show();
             }
         }
         

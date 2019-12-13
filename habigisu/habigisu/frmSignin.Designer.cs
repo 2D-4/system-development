@@ -122,10 +122,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox fSIdTBox;
         private System.Windows.Forms.TextBox fSPassTBox;
         private System.Windows.Forms.Button fSCancelBtn;
         private System.Windows.Forms.Button fSSigninBtn;
+        private System.Windows.Forms.TextBox fSIdTBox;
     }
 }
 

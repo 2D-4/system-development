@@ -43,7 +43,7 @@
             // fOSidlabel
             // 
             this.fOSidlabel.AutoSize = true;
-            this.fOSidlabel.Location = new System.Drawing.Point(597, 20);
+            this.fOSidlabel.Location = new System.Drawing.Point(593, 20);
             this.fOSidlabel.Name = "fOSidlabel";
             this.fOSidlabel.Size = new System.Drawing.Size(51, 15);
             this.fOSidlabel.TabIndex = 0;
