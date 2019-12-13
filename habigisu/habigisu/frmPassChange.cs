@@ -20,8 +20,16 @@ namespace habigisu
         public frmPassChange()
         {
             InitializeComponent();
+
+            fPCNPTBox.Text = defaultText;
+            fPCNPTBox.ForeColor = Color.Gray;
         }
 
+
+        
+        //Color defaultColor;　　　　　　　　　　　　　　　　　//未入力の場合の色の変数
+        //Color grayText = Color.Gray;　　　　　　　　　　　　 //未入力の場合のフォントカラー
+        string defaultText = "8文字以上半角英数字のみ";      //未入力の場合のメッセージ
 
 
 
@@ -49,9 +57,9 @@ namespace habigisu
 
         private int LengthCheck(string str)                                  //入力された文字が8文字以上16文字以内かチェック
         {
-            if ((str.Length < 8) && (str.Length > 16))       //文字数の確認
+            if ((str.Length < 8) || (str.Length > 16))       //文字数の確認
             {
-                Warning2.Text = "文字数ーーーーー！";          　　　　　　　　　　　　 //　2019/12/13(金)にやる！（通っていない）
+                Warning2.Text = "文字数ーーーーー！";          　　　　　　　　　　　　 
 
                 return 1;   //足りない
             }
@@ -212,6 +220,32 @@ namespace habigisu
 
 
 
+        //新しいパスワードのTextBoxが未入力の場合、説明文を表示する
+
+
+
+        private void fPCNPTBox_Leave(object sender, EventArgs e)                               //テキストボックスがアクティブでない時
+        {
+            if (fPCNPTBox.Text.Length <= 0 || fPCNPTBox.Text == defaultText)    //未入力の場合
+            {
+                fPCNPTBox.Text = defaultText;          //メッセージを表示する
+                fPCNPTBox.ForeColor = Color.Gray;    //メッセージの色を変える(薄い色)
+                fPCNPTBox.PasswordChar = '\0';       //マスクの'*'を外す
+            }
+        }
+
+        private void fPCNPTBox_Enter(object sender, EventArgs e)                               //Enterキーを押したとき
+        {
+            if (fPCNPTBox.Text == defaultText)                                  //入力された場合
+            {
+                fPCNPTBox.Text = string.Empty;
+                fPCNPTBox.ForeColor = Color.Black;　　//テキストボックスの色を変える(黒)
+                fPCNPTBox.PasswordChar = '*';         //パスワードマスク'*'をつける
+            }
+        }
+
+
+
         //変更ボタンを押した際
 
 
@@ -283,6 +317,6 @@ namespace habigisu
             
         }
 
-       
+   
     }
 }

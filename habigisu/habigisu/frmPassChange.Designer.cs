@@ -116,11 +116,12 @@
             this.fPCNPTBox.Location = new System.Drawing.Point(305, 197);
             this.fPCNPTBox.MaxLength = 16;
             this.fPCNPTBox.Name = "fPCNPTBox";
-            this.fPCNPTBox.PasswordChar = '*';
             this.fPCNPTBox.Size = new System.Drawing.Size(236, 30);
             this.fPCNPTBox.TabIndex = 6;
+            this.fPCNPTBox.Enter += new System.EventHandler(this.fPCNPTBox_Enter);
             this.fPCNPTBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fPCNPTBox_KeyDown);
             this.fPCNPTBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.fPCNPTBox_KeyPress);
+            this.fPCNPTBox.Leave += new System.EventHandler(this.fPCNPTBox_Leave);
             // 
             // fPCRNPTBox
             // 
