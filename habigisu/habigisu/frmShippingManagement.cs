@@ -57,20 +57,6 @@ namespace habigisu
         private void FSMNotSlistBtn_Click(object sender, EventArgs e)
         {
             //未出庫一覧
-            DataTable dt = new DataTable();
-            OleDbConnectionStringBuilder builder = new OleDbConnectionStringBuilder();
-            builder.Provider = "Microsoft.ACE.OLEDB.12.0";
-            builder.DataSource = "C:/Users/b8433/Documents/github/system-development/doc/DB/Habigisu.accdb";
-            using (OleDbConnection conn = new OleDbConnection(builder.ConnectionString))
-            {
-                using (OleDbCommand cmd = new OleDbCommand("SELECT 注文ID, 社員ID FROM 注文テーブル WHERE 出庫チェック = '未出庫'", conn))
-                {
-                    OleDbDataAdapter odda = new OleDbDataAdapter();
-                    odda.SelectCommand = cmd;
-                    odda.Fill(dt);
-                    FSMDatagridview.DataSource = dt;
-                }
-            }
         }
 
         private void FSMSearchBtn_Click(object sender, EventArgs e)
