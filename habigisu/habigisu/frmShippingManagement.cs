@@ -65,7 +65,7 @@ namespace habigisu
             var issueId = FSMSIDTbox.Text;
             var empId = FSMEmpIDTbox.Text;
 
-            if((orderId != "") && (issueId != "") && (empId != ""))
+            if((orderId != null) && (issueId != null) && (empId != null))
             {
                 DataTable dt = new DataTable();
                 OleDbConnectionStringBuilder builder = new OleDbConnectionStringBuilder();
