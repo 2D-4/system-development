@@ -44,7 +44,7 @@ namespace habigisu
             builder.DataSource = "C:/Users/b8433/Documents/github/system-development/doc/DB/Habigisu.accdb";
             using (OleDbConnection conn = new OleDbConnection(builder.ConnectionString))
             {
-                using (OleDbCommand cmd = new OleDbCommand("SELECT 出庫ID, 出庫日, 注文ID, 社員ID FROM 出庫テーブル", conn))
+                using (OleDbCommand cmd = new OleDbCommand("SELECT 出庫ID,出庫日,注文ID FROM 出庫テーブル", conn))
                 {
                     OleDbDataAdapter odda = new OleDbDataAdapter();
                     odda.SelectCommand = cmd;
@@ -65,28 +65,18 @@ namespace habigisu
             var issueId = FSMSIDTbox.Text;
             var empId = FSMEmpIDTbox.Text;
 
-            if((orderId != null) && (issueId != null) && (empId != null))
-            {
-                DataTable dt = new DataTable();
-                OleDbConnectionStringBuilder builder = new OleDbConnectionStringBuilder();
-                builder.Provider = "Microsoft.ACE.OLEDB.12.0";
-                builder.DataSource = "C:/Users/b8433/Documents/github/system-development/doc/DB/Habigisu.accdb";
-                using (OleDbConnection conn = new OleDbConnection(builder.ConnectionString))
-                {
-                    using (OleDbCommand cmd = new OleDbCommand("SELECT " + orderId + "," + issueId + "," + empId + " " + "FROM 出庫テーブル", conn))
-                    {
-                        OleDbDataAdapter odda = new OleDbDataAdapter();
-                        odda.SelectCommand = cmd;
-                        odda.Fill(dt);
-                        FSMDatagridview.DataSource = dt;
-                    }
+            DataTable dt = new DataTable();
+            OleDbConnectionStringBuilder builder = new OleDbConnectionStringBuilder();
+            builder.Provider = "Microsoft.ACE.OLEDB.12.0";
+            builder.DataSource = "C:/Users/b8433/Documents/github/system-development/doc/DB/Habigisu.accdb";
+            using (OleDbConnection conn = new OleDbConnection(builder.ConnectionString)) {
+                using (OleDbCommand cmd = new OleDbCommand("SELECT " + orderId + "," + issueId + "," + empId + " " + "FROM 出庫テーブル", conn)){
+                    OleDbDataAdapter odda = new OleDbDataAdapter();
+                    odda.SelectCommand = cmd;
+                    odda.Fill(dt);
+                    FSMDatagridview.DataSource = dt;
                 }
-            } else
-            {
-                MessageBox.Show("すべての項目を埋めてください", "エラー");
             }
-
-            
 
         }
 
