@@ -112,41 +112,41 @@ namespace habigisu
 
         private void fOSBackBtn_Click(object sender, EventArgs e)
         {
-            this.Close();
-            fOSManegement.Show();
+            Hide();
+            //fOSManegement.();
         }
 
         private void fOSSearchBtn_Click(object sender, EventArgs e)
         {
-            //ValueType
+            
         }
 
         private void fOSUpdateBtn_Click(object sender, EventArgs e)
         {
 
-            int selectrow = dataGridView1.CurrentCell.RowIndex;         //選択されている行番号
+            int selectrow = fOSDataGridView1.CurrentCell.RowIndex;         //選択されている行番号
             OleDbCommand cmd =
                 new OleDbCommand("UPDATE Member SET Name = @name, PosID = @posid, TeamID = @teamid, " +
                 "Birthday = @birthday, Height = @height, Weight = @weight, BloodType = @bloodtype, " +
                 "ImageFile = @imgfile WHERE ID = @id", cn);
             cmd.Parameters.AddWithValue("@name",
-                dataGridView1.Rows[selectrow].Cells["Name"].Value.ToString());
+               fOSDataGridView1.Rows[selectrow].Cells["Name"].Value.ToString());
             cmd.Parameters.AddWithValue("@posid",
-                dataGridView1.Rows[selectrow].Cells["PosID"].Value.ToString());
+                fOSDataGridView1.Rows[selectrow].Cells["PosID"].Value.ToString());
             cmd.Parameters.AddWithValue("@teamid",
-                dataGridView1.Rows[selectrow].Cells["TeamID"].Value.ToString());
+                fOSDataGridView1.Rows[selectrow].Cells["TeamID"].Value.ToString());
             cmd.Parameters.AddWithValue("@birthday",
-                dataGridView1.Rows[selectrow].Cells["Birthday"].Value.ToString());
+                fOSDataGridView1.Rows[selectrow].Cells["Birthday"].Value.ToString());
             cmd.Parameters.AddWithValue("@height",
-                dataGridView1.Rows[selectrow].Cells["Height"].Value);
+                fOSDataGridView1.Rows[selectrow].Cells["Height"].Value);
             cmd.Parameters.AddWithValue("@weight",
-                dataGridView1.Rows[selectrow].Cells["Weight"].Value);
+                fOSDataGridView1.Rows[selectrow].Cells["Weight"].Value);
             cmd.Parameters.AddWithValue("@bloodtype",
-                dataGridView1.Rows[selectrow].Cells["BloodType"].Value.ToString());
+                fOSDataGridView1.Rows[selectrow].Cells["BloodType"].Value.ToString());
             cmd.Parameters.AddWithValue("@imgfile",
-                dataGridView1.Rows[selectrow].Cells["ImageFile"].Value.ToString());
+                fOSDataGridView1.Rows[selectrow].Cells["ImageFile"].Value.ToString());
             cmd.Parameters.AddWithValue("@id",
-                dataGridView1.Rows[selectrow].Cells["ID"].Value.ToString());
+                fOSDataGridView1.Rows[selectrow].Cells["ID"].Value.ToString());
             try
             {
                 cn.Open();
