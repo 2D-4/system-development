@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmClientManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientManagement.Designer.cs">
+      <DependentUpon>frmClientManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPassChange.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmClientManagement.resx">
+      <DependentUpon>frmClientManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPassChange.resx">
       <DependentUpon>frmPassChange.cs</DependentUpon>
     </EmbeddedResource>

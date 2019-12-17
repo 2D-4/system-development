@@ -41,7 +41,7 @@ namespace habigisu
             DataTable dt = new DataTable();
             OleDbConnectionStringBuilder builder = new OleDbConnectionStringBuilder();
             builder.Provider = "Microsoft.ACE.OLEDB.12.0";
-            builder.DataSource = "C:/Users/b8433/Documents/github/system-development/doc/DB/Habigisu.accdb";
+            builder.DataSource = "../../../../doc/DB/Habigisu.accdb";
             using (OleDbConnection conn = new OleDbConnection(builder.ConnectionString))
             {
                 using (OleDbCommand cmd = new OleDbCommand("SELECT 出庫ID, 出庫日, 注文ID, 社員ID FROM 出庫テーブル", conn))
@@ -60,7 +60,7 @@ namespace habigisu
             DataTable dt = new DataTable();
             OleDbConnectionStringBuilder builder = new OleDbConnectionStringBuilder();
             builder.Provider = "Microsoft.ACE.OLEDB.12.0";
-            builder.DataSource = "C:/Users/b8433/Documents/github/system-development/doc/DB/Habigisu.accdb";
+            builder.DataSource = "../../../../doc/DB/Habigisu.accdb";
             using (OleDbConnection conn = new OleDbConnection(builder.ConnectionString))
             {
                 using (OleDbCommand cmd = new OleDbCommand("SELECT 注文ID, 社員ID FROM 注文テーブル WHERE 出庫チェック = '未出庫'", conn))
@@ -84,7 +84,7 @@ namespace habigisu
                 DataTable dt = new DataTable();
                 OleDbConnectionStringBuilder builder = new OleDbConnectionStringBuilder();
                 builder.Provider = "Microsoft.ACE.OLEDB.12.0";
-                builder.DataSource = "C:/Users/b8433/Documents/github/system-development/doc/DB/Habigisu.accdb";
+                builder.DataSource = "../../../../doc/DB/Habigisu.accdb";
                 using (OleDbConnection conn = new OleDbConnection(builder.ConnectionString))
                 {
                     using (OleDbCommand cmd = new OleDbCommand("SELECT " + orderId + "," + issueId + "," + empId + " " + "FROM 出庫テーブル", conn))
