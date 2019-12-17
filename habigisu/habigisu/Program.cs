@@ -1,10 +1,11 @@
-﻿using System;
+﻿using habigisu;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace login
+namespace hibigisu
 {
     static class Program
     {
@@ -16,7 +17,7 @@ namespace login
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSignin());
+            Application.Run(new frmProductManagement());
         }
     }
 }
