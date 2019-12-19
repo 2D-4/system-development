@@ -14,7 +14,7 @@ namespace habigisu
     class PasswordHash
     {
         OleDbConnection cn = new OleDbConnection(); //グローバル変数　コネクションオブジェクト
-
+        
         //ハッシュ文字列を作成して返す処理
         private string SaltToMake()
         {
@@ -37,6 +37,7 @@ namespace habigisu
 
             OleDbDataAdapter da = new OleDbDataAdapter(); //データアダプタオブジェクト
             OleDbCommand cmd = new OleDbCommand();        //コマンドオブジェクト
+<<<<<<< HEAD
             cmd.Connection = cn;
             cn.Open();
 
@@ -82,6 +83,27 @@ namespace habigisu
             }
            
             return "hoge";
+        }
+    }
+}
+=======
+
+            cmd.Connection = cn;
+
+           cmd.CommandText = "SELECT * FROM 社員PASSテーブル WHERE ID=@eid AND PASS=@pwd"
+
+            string salt = "\0";
+
+
+            const int SALT_SIZE = 24;
+
+            var buff = new byte[SALT_SIZE];
+            using (var rng = new RNGCryptoServiceProvider())
+            {
+                rng.GetBytes(buff);
+            }
+            salt = Convert.ToBase64String(buff);
+            return Convert.ToBase64String(buff);
         }
     }
 }
