@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="AuthoritySelector.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
