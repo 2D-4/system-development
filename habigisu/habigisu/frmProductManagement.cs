@@ -18,10 +18,13 @@ namespace habigisu
 
         }
 
-        private void frmProductManagement_Load(object sender, EventArgs e)
+
+        private void frmProductManagement_Shown(object sender, EventArgs e)
         {
             FPMPidTbox.Focus(); //商品IDにフォーカスを当てる
-        } 
+        }
+
+
 
         private void FPMPidTbox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -55,6 +58,6 @@ namespace habigisu
             }
         }
 
-       
+    
     }
 }
