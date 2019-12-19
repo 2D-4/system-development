@@ -87,7 +87,6 @@ namespace habigisu
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             OleDbDataAdapter da = new OleDbDataAdapter(); //データアダプタオブジェクト
             OleDbCommand cmd = new OleDbCommand();        //コマンドオブジェクト
             string sid = fSIdTBox.Text;
@@ -114,11 +113,6 @@ namespace habigisu
                 MessageBox.Show("ID、パスワードを確認してください。", "WinSystem02");
                 fSIdTBox.Focus();
             }
-=======
-            this.Hide();
-            habigisu.frmOrderstockManegement fmOM = new habigisu.frmOrderstockManegement();
-            fmOM.Show();//仮置きコード（後で消す）
->>>>>>> 7ad2297fb927db58cab2a1197c7c46bc4817985c
         }
 
         private void btnCansel_Click(object sender, EventArgs e)
