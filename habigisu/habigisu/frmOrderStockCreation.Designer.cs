@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.fOSidlabel = new System.Windows.Forms.Label();
-            this.fOSnamelabel = new System.Windows.Forms.Label();
             this.fOSupdateBtn = new System.Windows.Forms.Button();
             this.fOSCancelBtn = new System.Windows.Forms.Button();
             this.fOSconfirmBtn = new System.Windows.Forms.Button();
@@ -43,20 +42,11 @@
             // fOSidlabel
             // 
             this.fOSidlabel.AutoSize = true;
-            this.fOSidlabel.Location = new System.Drawing.Point(593, 20);
+            this.fOSidlabel.Location = new System.Drawing.Point(712, 21);
             this.fOSidlabel.Name = "fOSidlabel";
             this.fOSidlabel.Size = new System.Drawing.Size(51, 15);
             this.fOSidlabel.TabIndex = 0;
             this.fOSidlabel.Text = "社員ID";
-            // 
-            // fOSnamelabel
-            // 
-            this.fOSnamelabel.AutoSize = true;
-            this.fOSnamelabel.Location = new System.Drawing.Point(715, 20);
-            this.fOSnamelabel.Name = "fOSnamelabel";
-            this.fOSnamelabel.Size = new System.Drawing.Size(52, 15);
-            this.fOSnamelabel.TabIndex = 1;
-            this.fOSnamelabel.Text = "社員名";
             // 
             // fOSupdateBtn
             // 
@@ -137,7 +127,6 @@
             this.Controls.Add(this.fOSconfirmBtn);
             this.Controls.Add(this.fOSCancelBtn);
             this.Controls.Add(this.fOSupdateBtn);
-            this.Controls.Add(this.fOSnamelabel);
             this.Controls.Add(this.fOSidlabel);
             this.Name = "frmOrderStockCreation";
             this.Text = "frmOrderStockCreation";
@@ -152,7 +141,6 @@
         #endregion
 
         private System.Windows.Forms.Label fOSidlabel;
-        private System.Windows.Forms.Label fOSnamelabel;
         private System.Windows.Forms.Button fOSupdateBtn;
         private System.Windows.Forms.Button fOSCancelBtn;
         private System.Windows.Forms.Button fOSconfirmBtn;

@@ -25,9 +25,9 @@ namespace habigisu
                 @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\habigisu.accdb;";
             dataload();
 
-            string str1 = frmSignin.frmSigninInstance.fSIdTBoxText;
+            //string str1 = frmSignin.frmSigninInstance.fSIdTBoxText;
 
-            fOSidlabel.Text = str1;
+            //fOSidlabel.Text = str1;
         }
 
         private void frmOrderStockCreation_FormClosing(object sender, FormClosingEventArgs e)
@@ -61,6 +61,8 @@ namespace habigisu
             int selectrow = fOSDataGridview.CurrentCell.ColumnIndex;                 //選択されている行番号
             OleDbCommand cmd =
                 new OleDbCommand("UPDATE 発注詳細テーブル SET 発注数量 = @quantity ", cn);
+
+            Console.WriteLine("@quantity");
             cmd.Parameters.AddWithValue("@quantity", fOStB1.Text);                 //数量のデータ
             try
             {
@@ -86,8 +88,9 @@ namespace habigisu
             if (result == DialogResult.OK)
             {
                 int selectrow = fOSDataGridview.CurrentCell.ColumnIndex;                 //選択されている行番号
-                OleDbCommand cmd = new OleDbCommand("DELETE FROM 発注詳細テーブル WHERE 商品ID = @id", cn);  //ID
-                cmd.Parameters.AddWithValue("@id", fOSDataGridview.Rows[0].Cells["商品ID"].Value);
+                OleDbCommand cmd = new OleDbCommand("DELETE FROM 発注詳細テーブル WHERE 発注ID = @id ", cn);  //ID
+                Console.WriteLine("@id");
+                cmd.Parameters.AddWithValue("@id", fOSDataGridview.Rows[0].Cells["発注ID"].Value);
                 try
                 {
                     cn.Open();                 //コネクションを開く
@@ -113,10 +116,6 @@ namespace habigisu
             if (result == DialogResult.OK)
             {
                 savedata();
-                //System.IO.StreamWriter sw = new System.IO.StreamWriter(
-                //    "C:/Users/B8035/Desktop/上柴進捗/test.txt", false, System.Text.Encoding.Default);
-                //sw.WriteLine("うまくいきよったか？");
-                //sw.Close();
             }
         }
 
@@ -138,6 +137,5 @@ namespace habigisu
             //        　　+ 数量
             //}
         }
-
     }
 }
