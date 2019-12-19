@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="AuthoritySelector.cs" />
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -65,6 +66,7 @@
     <Compile Include="frmSignin.Designer.cs">
       <DependentUpon>frmSignin.cs</DependentUpon>
     </Compile>
+    <Compile Include="PasswordHash.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
