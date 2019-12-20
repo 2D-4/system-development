@@ -99,12 +99,12 @@ namespace habigisu
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "WinDB03");
+                MessageBox.Show(ex.Message);
                 cn.Close();
                 return;
             }
-            MessageBox.Show("更新しました", "WinDB03");
-            dataload();
+            MessageBox.Show("更新しました");
+            //dataload();//  仮
             }
 
             private void fOMMakeBtn_Click(object sender, EventArgs e)
@@ -115,7 +115,43 @@ namespace habigisu
 
             private void fOMConfirmBtn_Click(object sender, EventArgs e)
             {
-
+            int selectrow = fOMDataGridView.CurrentCell.RowIndex;                //選択されている行番号
+            OleDbCommand cmd =
+                new OleDbCommand("INSERT INTO Member2 (ID, Name, PosID, TeamID, Birthday, " +
+                "Height, Weight, BloodType, ImageFile) VALUES (@id, @name, @posid, @teamid, " +
+                "@birthday, @height, @weight, @bloodtype, @imgfile)", cn);
+            cmd.Parameters.AddWithValue("@id",
+                fOMDataGridView.Rows[selectrow].Cells["ID"].Value.ToString());
+            cmd.Parameters.AddWithValue("@name",
+                fOMDataGridView.Rows[selectrow].Cells["Name"].Value.ToString());
+            cmd.Parameters.AddWithValue("@posid",
+                fOMDataGridView.Rows[selectrow].Cells["PosID"].Value.ToString());
+            cmd.Parameters.AddWithValue("@teamid",
+                fOMDataGridView.Rows[selectrow].Cells["TeamID"].Value.ToString());
+            cmd.Parameters.AddWithValue("@birthday",
+                fOMDataGridView.Rows[selectrow].Cells["Birthday"].Value.ToString());
+            cmd.Parameters.AddWithValue("@height",
+                fOMDataGridView.Rows[selectrow].Cells["Height"].Value);
+            cmd.Parameters.AddWithValue("@weight",
+                fOMDataGridView.Rows[selectrow].Cells["Weight"].Value);
+            cmd.Parameters.AddWithValue("@bloodtype",
+                fOMDataGridView.Rows[selectrow].Cells["BloodType"].Value.ToString());
+            cmd.Parameters.AddWithValue("@imgfile",
+                fOMDataGridView.Rows[selectrow].Cells["ImageFile"].Value.ToString());
+            try
+            {
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                cn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cn.Close();
+                return;
+            }
+            //dataload();//        
+            MessageBox.Show("注文書に追加しました");
             }
 
             private void fOMBackBtn_Click(object sender, EventArgs e)
@@ -123,20 +159,27 @@ namespace habigisu
                 this.Close();
             }
 
-            private void fOMStatusTbox_TextChanged(object sender, EventArgs e)
-            {
+        private void frmOrderManagement_Shown(object sender, EventArgs e)
+        {
+            fOMStatusTbox.Focus();
+        }
 
+        private void fOMStatusTbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                fOMOrderIdTbox.Focus();
             }
 
-            private void fOMOrderIdTbox_TextChanged(object sender, EventArgs e)
+        }
+
+        private void fOMOrderIdTbox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
             {
-
+                fOMProductTbox.Focus();
             }
-
-            private void fOMProductTbox_TextChanged(object sender, EventArgs e)
-            {
-
-            }
+        }
     }
 }
 

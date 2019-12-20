@@ -66,7 +66,7 @@
             this.fOMStatusTbox.Name = "fOMStatusTbox";
             this.fOMStatusTbox.Size = new System.Drawing.Size(156, 22);
             this.fOMStatusTbox.TabIndex = 1;
-            this.fOMStatusTbox.TextChanged += new System.EventHandler(this.fOMStatusTbox_TextChanged);
+            this.fOMStatusTbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fOMStatusTbox_KeyDown);
             // 
             // label1
             // 
@@ -151,7 +151,6 @@
             this.fOMProductTbox.Name = "fOMProductTbox";
             this.fOMProductTbox.Size = new System.Drawing.Size(169, 22);
             this.fOMProductTbox.TabIndex = 28;
-            this.fOMProductTbox.TextChanged += new System.EventHandler(this.fOMProductTbox_TextChanged);
             // 
             // label9
             // 
@@ -196,7 +195,7 @@
             this.fOMOrderIdTbox.Name = "fOMOrderIdTbox";
             this.fOMOrderIdTbox.Size = new System.Drawing.Size(154, 22);
             this.fOMOrderIdTbox.TabIndex = 33;
-            this.fOMOrderIdTbox.TextChanged += new System.EventHandler(this.fOMOrderIdTbox_TextChanged);
+            this.fOMOrderIdTbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fOMOrderIdTbox_KeyDown);
             // 
             // label12
             // 
@@ -247,6 +246,7 @@
             this.Controls.Add(this.fOMBtn1);
             this.Name = "frmOrderManagement";
             this.Text = "注文管理画面";
+            this.Shown += new System.EventHandler(this.frmOrderManagement_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.fOMDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

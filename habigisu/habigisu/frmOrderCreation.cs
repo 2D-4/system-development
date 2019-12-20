@@ -23,7 +23,7 @@ namespace habigisu
         {
             cn.ConnectionString =
                 @"Provider = Microsoft.ACE.OLEDB.12.0;Data Source = |DataDirectory|\DBJapan.accdb;";
-            OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Member ORDER BY ID", cn);
+            OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Member2 ORDER BY ID", cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             fOCDataGridView.DataSource = dt;
@@ -53,7 +53,7 @@ namespace habigisu
 
          cn.ConnectionString =
          @"Provider = Microsoft.ACE.OLEDB.12.0;Data Source = |DataDirectory|\DBJapan.accdb;";
-         OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Member ORDER BY ID", cn);
+         OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Member2 ORDER BY ID", cn);
          DataTable dt = new DataTable();
          da.Fill(dt);
          fOCDataGridView.DataSource = dt;
@@ -68,7 +68,7 @@ namespace habigisu
         private void fOCDeleteBtn_Click(object sender, EventArgs e)
         {
             int selectrow = fOCDataGridView.CurrentCell.RowIndex;                 //選択されている行番号
-            OleDbCommand cmd = new OleDbCommand("DELETE FROM Member WHERE ID = @id", cn);
+            OleDbCommand cmd = new OleDbCommand("DELETE FROM Member2 WHERE ID = @id", cn);
             cmd.Parameters.AddWithValue("@id", fOCDataGridView.Rows[selectrow].Cells["ID"].Value);
             try
             {
@@ -78,11 +78,11 @@ namespace habigisu
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "WinDB03");
+                MessageBox.Show(ex.Message);
                 cn.Close();
                 return;
             }
-            MessageBox.Show("削除しました", "WinDB03");
+            MessageBox.Show("削除しました");
             dataload();
         }
     }
