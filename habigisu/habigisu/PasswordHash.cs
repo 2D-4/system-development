@@ -29,6 +29,20 @@ namespace habigisu
             return salt;
         }
 
+        //ハッシュ文字列を作成して返す処理
+        private string SaltToMake()
+        {
+            const int SALT_SIZE = 24;
+
+            var buff = new byte[SALT_SIZE];
+            using (var rng = new RNGCryptoServiceProvider())
+            {
+                rng.GetBytes(buff);
+            }
+            string salt = Convert.ToBase64String(buff);
+            return salt;
+        }
+
         //DBに格納されている各社員のソルトがあるかを確認し、なければ新たにソルトを作成,保存し、そのソルトと入力されたパスワードを用いてハッシュ化した文字列を返す関数
         public string PasswordToHash(string eid, string pwd)
         {
