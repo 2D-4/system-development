@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,10 +13,38 @@ namespace habigisu
 {
     public partial class frmProductManagement : Form
     {
+        OleDbConnection cn = new OleDbConnection();   //コネクションオブジェクト
+
         public frmProductManagement()
         {
             InitializeComponent();
+        }
 
+        private void frmProductManagement_Load(object sender, EventArgs e)
+        {
+            cn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\habigisu.accdb;";   
+
+        }
+
+
+
+        private int GenreSearch(string str)
+        {
+            OleDbDataAdapter da = new OleDbDataAdapter(); //データアダプタオブジェクト
+            OleDbCommand cmd = new OleDbCommand();        //コマンドオブジェクト
+            string sid = FPMGenreCBox.Text;
+            cmd.Connection = cn;
+
+            cmd.CommandText="SELECT ID FROM ジャンルマスタ WHERE ID=@sid ジャンル名";
+
+            cmd.Parameters.AddWithValue("@sid", sid);  //SQLインジェクション対策
+
+            //Dateset文を使って家でやる。　調べる。
+
+            //cmd.ExecuteScalar;
+            //GenreID = cmd.ExecuteNonQuery;
+
+            return 0; //書かないとエラーおこるのであとりあえず、後で消す
         }
 
 
@@ -58,6 +87,6 @@ namespace habigisu
             }
         }
 
-    
+       
     }
 }
