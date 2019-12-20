@@ -50,7 +50,8 @@ namespace habigisu
 
         private void fCMUpdateBtn_Click(object sender, EventArgs e)
         {
-            //更新
+            var ds = new DataSet();  //OdbcDataAdapter.Update(?) 更新
+            
         }
 
         private void fCMBackBtn_Click(object sender, EventArgs e)
