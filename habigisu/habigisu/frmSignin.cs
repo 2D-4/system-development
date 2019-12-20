@@ -19,30 +19,6 @@ namespace habigisu
         {
             InitializeComponent();
         }
-        
-        //public static frmSignin frmSigninInstance
-        //{
-        //    get
-        //    {
-        //        return frmSigninInstance;
-        //    }
-        //    set
-        //    {
-        //        frmSigninInstance = value;
-        //    }
-        //}
-
-        public string fSIdTBoxText
-        {
-            get
-            {
-                return fSIdTBox.Text;
-            }
-            set
-            {
-                fSIdTBox.Text = value;
-            }
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {

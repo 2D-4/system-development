@@ -24,10 +24,6 @@ namespace habigisu
             cn.ConnectionString =
                 @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\habigisu.accdb;";
             dataload();
-
-            //string str1 = frmSignin.frmSigninInstance.fSIdTBoxText;
-
-            //fOSidlabel.Text = str1;
         }
 
         private void frmOrderStockCreation_FormClosing(object sender, FormClosingEventArgs e)
@@ -103,7 +99,7 @@ namespace habigisu
                     cn.Close();                //コネクションを閉じる
                     return;
                 }
-
+                
                 dataload();                   //データをロードする関数
                 MessageBox.Show("削除しました", "habigisu",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
