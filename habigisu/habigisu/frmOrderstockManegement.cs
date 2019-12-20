@@ -26,13 +26,13 @@ namespace habigisu
         {
             cn.ConnectionString =
                @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\habigisu.accdb;";
-            
+
         }
 
         private void fOSBtn1_Click(object sender, EventArgs e)
         {
             dataload();
-            
+
             OleDbDataAdapter da =
                new OleDbDataAdapter("SELECT * FROM 発注テーブル WHERE 入庫チェック = '出庫済' ORDER BY 発注ID", cn);
             DataTable dt = new DataTable();
@@ -118,7 +118,7 @@ namespace habigisu
 
         private void fOSSearchBtn_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void fOSUpdateBtn_Click(object sender, EventArgs e)
@@ -178,7 +178,9 @@ namespace habigisu
 
         private void fOSConfirmBtn_Click(object sender, EventArgs e)
         {
-           
+            frmOrderstockManegement form2 = new
+            frmOrderstockManegement();
+            form2.ShowDialog();
         }
 
         private void fOSdtPicker2_ValueChanged(object sender, EventArgs e)
@@ -200,5 +202,16 @@ namespace habigisu
         {
 
         }
+
+        private void fOSSearchBtn_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                
+            }
+        }
+
+       
     }
 }
+    

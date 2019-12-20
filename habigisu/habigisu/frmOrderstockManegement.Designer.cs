@@ -81,6 +81,7 @@
             this.fOSSearchBtn.Text = "検索";
             this.fOSSearchBtn.UseVisualStyleBackColor = true;
             this.fOSSearchBtn.Click += new System.EventHandler(this.fOSSearchBtn_Click);
+            this.fOSSearchBtn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fOSSearchBtn_KeyDown);
             // 
             // fOSUpdateBtn
             // 
