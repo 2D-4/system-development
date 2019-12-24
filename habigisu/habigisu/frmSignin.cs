@@ -1,4 +1,4 @@
-﻿using habigisu;
+using habigisu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -58,7 +58,6 @@ namespace login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             SaltSelector ss = new SaltSelector();
             PasswordHash ph = new PasswordHash();
 
@@ -77,13 +76,6 @@ namespace login
             }
             string pwdhash = ph.GeneratePasswordHash(pwd, salt);
             Console.WriteLine(pwdhash);
-=======
-            habigisu.PasswordHash ph = new habigisu.PasswordHash();
-
-            string eid = fSIdTBox.Text;
-            string pwd = fSPassTBox.Text;
-            string hashstr = ph.PasswordToHash(eid, pwd);
->>>>>>> origin/feature-97
         }
 
         private void btnCansel_Click(object sender, EventArgs e)
