@@ -54,9 +54,12 @@
     </Compile>
     <Compile Include="PasswordHash.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="SaltSelector.cs" />
 =======
 >>>>>>> origin/feature-97
+=======
+>>>>>>> upstream/feature-97
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmSignin.resx">

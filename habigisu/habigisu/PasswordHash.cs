@@ -1,14 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 <<<<<<< HEAD
+<<<<<<< HEAD
 using System.Data.OleDb;
 using System.Linq;
 using System.Security.Cryptography;
+=======
+using System.Linq;
+>>>>>>> upstream/feature-97
 using System.Text;
 using System.Threading.Tasks;
 
 namespace habigisu
 {
+<<<<<<< HEAD
     //パスワードをハッシュ化するクラス ソルトとパスワードを用いてハッシュ化した文字列を返す関数
     class PasswordHash
     {
@@ -110,3 +115,10 @@ namespace habigisu
     }
 }
 >>>>>>> origin/feature-97
+=======
+    
+    class PasswordHash
+    {
+    }
+}
+>>>>>>> upstream/feature-97
