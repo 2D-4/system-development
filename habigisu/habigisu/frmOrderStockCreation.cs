@@ -35,8 +35,8 @@ namespace habigisu
             }
             else
             {
-                this.Hide();
-                frmOrderStockManegement.Show();
+                //this.Hide();
+                //frmOrderStockManegement.Show();
             }
         }
         
@@ -117,21 +117,41 @@ namespace habigisu
 
         private void fOSbackBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmOrderStockManegement.Show();
+            //this.Hide();
+            //frmOrderStockManegement.Show();
         }
-        
+
+        //private void savedata()
+        //{
+        //    string path = "発注書.csv"; //出力ファイル
+        //    string strData = ""; //一行分のデータ
+        //    System.IO.StreamWriter sw = new System.IO.StreamWriter(
+        //        path, false, System.Text.Encoding.Default);
+        //    foreach (habigisu.habigisuTableRow hattyusho in habigisu.habigisuTableRow)
+        //    {
+        //        strData = habigisu.発注ID + ","
+        //                + habigisu.商品ID + ","
+        //                + habigisu.発注数量 + ","
+        //                + habigisu.購入単価.ToString() + ","
+        //                + habigisu.合計金額.ToString();
+        //        sw WriteLine(strData);
+        //    }
+        //}
         private void savedata()
         {
-            //string path = "発注書.csv"; //出力ファイル
-            //string strData = ""; //一行分のデータ
-            //System.IO.StreamWriter sw = new System.IO.StreamWriter(
-            //    path, false, System.Text.Encoding.Default);
-            //foreach (habigisu.frmOrderStockCreation.)
-            //{
-            //    strData = 商品名
-            //        　　+ 数量
-            //}
+            string path = "発注書.csv"; //出力ファイル
+            string strData = ""; //一行分のデータ
+            System.IO.StreamWriter sw = new System.IO.StreamWriter(
+                path, false, System.Text.Encoding.Default);
+            foreach (habigisu.habigisuTableRow hattyusho in habigisu.habigisuTableRow)
+            {
+                strData = habigisu.発注ID + ","
+                        + habigisu.商品ID + ","
+                        + habigisu.発注数量 + ","
+                        + habigisu.購入単価.ToString() + ","
+                        + habigisu.合計金額.ToString();
+                sw WriteLine(strData);
+            }
         }
     }
 }
