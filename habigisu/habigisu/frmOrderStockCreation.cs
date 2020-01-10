@@ -44,7 +44,7 @@ namespace habigisu
         {
             // SQL関係はいずれ変える
             OleDbDataAdapter da =
-                new OleDbDataAdapter("SELECT * FROM 発注詳細テーブル ORDER BY 商品ID", cn);
+                new OleDbDataAdapter("SELECT * FROM 発注詳細テーブル ORDER BY 発注ID", cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             fOSDataGridview.DataSource = dt;
@@ -113,6 +113,9 @@ namespace habigisu
             {
                 savedata();
             }
+
+            //this.Hide();
+            //frmOrderStockManegement.Show();
         }
 
         private void fOSbackBtn_Click(object sender, EventArgs e)
@@ -120,37 +123,25 @@ namespace habigisu
             //this.Hide();
             //frmOrderStockManegement.Show();
         }
-
-        //private void savedata()
-        //{
-        //    string path = "発注書.csv"; //出力ファイル
-        //    string strData = ""; //一行分のデータ
-        //    System.IO.StreamWriter sw = new System.IO.StreamWriter(
-        //        path, false, System.Text.Encoding.Default);
-        //    foreach (habigisu.habigisuTableRow hattyusho in habigisu.habigisuTableRow)
-        //    {
-        //        strData = habigisu.発注ID + ","
-        //                + habigisu.商品ID + ","
-        //                + habigisu.発注数量 + ","
-        //                + habigisu.購入単価.ToString() + ","
-        //                + habigisu.合計金額.ToString();
-        //        sw WriteLine(strData);
-        //    }
-        //}
+        
         private void savedata()
         {
+            OleDbDataAdapter da =
+                new OleDbDataAdapter("SELECT * FROM 発注詳細テーブル ORDER BY 発注ID", cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
             string path = "発注書.csv"; //出力ファイル
             string strData = ""; //一行分のデータ
             System.IO.StreamWriter sw = new System.IO.StreamWriter(
                 path, false, System.Text.Encoding.Default);
-            foreach (habigisu.habigisuTableRow hattyusho in habigisu.habigisuTableRow)
+            foreach (DataRow hattyusho in dt.Rows)
             {
-                strData = habigisu.発注ID + ","
-                        + habigisu.商品ID + ","
-                        + habigisu.発注数量 + ","
-                        + habigisu.購入単価.ToString() + ","
-                        + habigisu.合計金額.ToString();
-                sw WriteLine(strData);
+                strData = hattyusho[0] + ","
+                        + hattyusho[1] + ","
+                        + hattyusho[2] + ","
+                        + hattyusho[3].ToString() + ","
+                        + hattyusho[4].ToString();
+                sw.WriteLine(strData);
             }
         }
     }
