@@ -76,6 +76,7 @@
             this.FPMSearchBtn.TabIndex = 2;
             this.FPMSearchBtn.Text = "検索";
             this.FPMSearchBtn.UseVisualStyleBackColor = true;
+            this.FPMSearchBtn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FPMSearchBtn_KeyDown);
             // 
             // FPMRegiBtn
             // 

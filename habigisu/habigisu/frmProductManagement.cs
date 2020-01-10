@@ -20,29 +20,47 @@ namespace habigisu
             InitializeComponent();
         }
 
-        private void frmProductManagement_Load(object sender, EventArgs e)
-        {
-            cn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\habigisu.accdb;";   
 
+        private void selfunc(string sql)
+        {
+            dataGridView1.DataSource = null;
+            OleDbDataAdapter da = new OleDbDataAdapter(sql, cn);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;         //データベースに設定
+            dataGridView1.AutoResizeColumns();     //列の幅の自動調整
         }
 
 
 
-        private int GenreSearch(string str)
+        private void frmProductManagement_Load(object sender, EventArgs e)
         {
-            OleDbDataAdapter da = new OleDbDataAdapter(); //データアダプタオブジェクト
-            OleDbCommand cmd = new OleDbCommand();        //コマンドオブジェクト
-            string sid = FPMGenreCBox.Text;
-            cmd.Connection = cn;
+            cn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\habigisu.accdb;";
 
-            cmd.CommandText="SELECT ID FROM ジャンルマスタ WHERE ID=@sid ジャンル名";
+            selfunc("SELECT * FROM 商品マスタ");  //全項目
+        }
 
-            cmd.Parameters.AddWithValue("@sid", sid);  //SQLインジェクション対策
+
+
+        private int ProdcutSearch(string str)
+        {
+            //OleDbDataAdapter da = new OleDbDataAdapter(); //データアダプタオブジェクト
+            //OleDbCommand cmd = new OleDbCommand();        //コマンドオブジェクト
+            //string sid = FPMGenreCBox.Text;
+            //cmd.Connection = cn;
+
+            //cmd.CommandText="SELECT ID FROM ジャンルマスタ WHERE ID=@sid ジャンル名";
+
+            //cmd.Parameters.AddWithValue("@sid", sid);  //SQLインジェクション対策
 
             //Dateset文を使って家でやる。　調べる。
 
             //cmd.ExecuteScalar;
             //GenreID = cmd.ExecuteNonQuery;
+            if (str.Length==0)
+            {
+                
+            }
 
             return 0; //書かないとエラーおこるのであとりあえず、後で消す
         }
@@ -51,9 +69,12 @@ namespace habigisu
         private void frmProductManagement_Shown(object sender, EventArgs e)
         {
             FPMPidTbox.Focus(); //商品IDにフォーカスを当てる
+
+            dataGridView1.AllowUserToAddRows = false; //DBの最下行を非表示
         }
 
 
+        //Foucs
 
         private void FPMPidTbox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -87,6 +108,20 @@ namespace habigisu
             }
         }
 
-       
+
+        //検索ボタン
+
+        private void FPMSearchBtn_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) //Enterキーであれば
+            {　
+                string ProdcutID = FPMPidTbox.Text; //商品ID
+                string Prname = FPMProTbox.Text;  //商品名
+                string CCode = FPMGenreCBox.Text; //ジャンル (分類コードを先に特定しないといけない、検索できない)
+                string Author = FPMAutTbox.Text;  //著者名   (仕入れ先ID を先に特定しないといけない、検索できない)　　最悪変える。
+
+
+            }
+        }
     }
 }
