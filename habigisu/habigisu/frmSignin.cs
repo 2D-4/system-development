@@ -74,8 +74,15 @@ namespace login
                 MessageBox.Show("プログラム作成者にご連絡ください。");
                 return;
             }
-            string pwdhash = ph.GeneratePasswordHash(pwd, salt);
-            Console.WriteLine(pwdhash);
+            else
+            {
+                string ekana = ph.CheckEmployee(pwd, salt, eid);
+                //Console.WriteLine(ekana);
+                if(ekana != "\0")
+                {
+                    MessageBox.Show("ログインしました！");
+                }
+            }
         }
 
         private void btnCansel_Click(object sender, EventArgs e)
