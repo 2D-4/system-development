@@ -39,15 +39,15 @@ namespace habigisu
 
             cmd.Parameters.AddWithValue("@eid", eid);       //IDのパラメータ
             DataTable dt = new DataTable();
-            da.Fill(dt);          
+            da.Fill(dt);
 
-            if(dt.Rows.Count > 0)                          //検索結果が正常に帰ってきた時
+            if (dt.Rows.Count > 0)                          //検索結果が正常に帰ってきた時
             {
                 string salt = cmd.ExecuteScalar().ToString();     //DBから見つかったハッシュ文字列を変数saltに格納
 
                 if (salt.Length != 32)                    //ハッシュ文字列がまだ空白の場合
                 {
-                    salt = GenerateSalt();                //ハッシュ文字列作成する
+                    salt = GenerateSalt();                //ハッシュ文字列作成
 
                     //DBにハッシュ文字列を格納する
                     cmd.CommandText = "UPDATE 社員PASSテーブル SET ハッシュ文字列='" + salt
@@ -66,6 +66,7 @@ namespace habigisu
                 return salt;                             //正しい返却値 
             }
             else
+                cn.Close();
                 return "\0";                             //社員番号ないよ
         }
     }
