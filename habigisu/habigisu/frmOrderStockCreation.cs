@@ -35,8 +35,8 @@ namespace habigisu
             }
             else
             {
-                //this.Hide();
-                //frmOrderStockManegement.Show();
+                this.Hide();
+                frmOrderStockManegement.Show();
             }
         }
         
@@ -114,14 +114,14 @@ namespace habigisu
                 savedata();
             }
 
-            //this.Hide();
-            //frmOrderStockManegement.Show();
+            this.Hide();
+            frmOrderStockManegement.Show();
         }
 
         private void fOSbackBtn_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //frmOrderStockManegement.Show();
+            this.Hide();
+            frmOrderStockManegement.Show();
         }
         
         private void savedata()

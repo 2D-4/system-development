@@ -77,12 +77,9 @@ namespace habigisu
 
             if (dt.Rows.Count > 0)    //データテーブルの行数
             {
-                //this.Hide();
-                //habigisu.frmMain fmM = new habigisu.frmMain();
-                //fmM.Show();
                 this.Hide();
-                habigisu.frmOrderStockCreation fmO = new habigisu.frmOrderStockCreation();
-                fmO.Show();
+                habigisu.frmMain fmM = new habigisu.frmMain();
+                fmM.Show();
             }
             else
             {
