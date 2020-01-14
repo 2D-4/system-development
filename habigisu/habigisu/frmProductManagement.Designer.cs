@@ -66,6 +66,7 @@
             this.FPMPlistBtn.TabIndex = 1;
             this.FPMPlistBtn.Text = "商品一覧";
             this.FPMPlistBtn.UseVisualStyleBackColor = true;
+            this.FPMPlistBtn.Click += new System.EventHandler(this.FPMPlistBtn_Click);
             // 
             // FPMSearchBtn
             // 
@@ -76,6 +77,7 @@
             this.FPMSearchBtn.TabIndex = 2;
             this.FPMSearchBtn.Text = "検索";
             this.FPMSearchBtn.UseVisualStyleBackColor = true;
+            this.FPMSearchBtn.Click += new System.EventHandler(this.FPMSearchBtn_Click);
             this.FPMSearchBtn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FPMSearchBtn_KeyDown);
             // 
             // FPMRegiBtn
