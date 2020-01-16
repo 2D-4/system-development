@@ -18,28 +18,30 @@ namespace habigisu
         public frmMain()
         {
             InitializeComponent();
+            lbleid.Text = eid;
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("商品管理に行く");
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("注文管理に行く");
         }
 
         private void btnOderStock_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("発注管理に行く");
         }
 
         private void btnShipping_Click(object sender, EventArgs e)
         {
-            int aflag = au.CheckDeptAuthority(0, eid);
-            Console.WriteLine(aflag);
-            if(aflag == 0)
+            int d_flag = au.CheckDeptAuthority(0, eid);
+            int p_flag = au.CheckPosAuthority(0, eid);
+
+            if(d_flag == 0 || p_flag == 0)
             {
                 MessageBox.Show("出庫管理に行くお");
             }
@@ -51,9 +53,10 @@ namespace habigisu
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            int aflag = au.CheckDeptAuthority(1, eid);
-            Console.WriteLine(aflag);
-            if (aflag == 0)
+            int d_flag = au.CheckDeptAuthority(1, eid);
+            int p_flag = au.CheckPosAuthority(1, eid);
+
+            if (d_flag == 0 || p_flag == 0)
             {
                 MessageBox.Show("売上管理に行くお");
             }
@@ -65,9 +68,10 @@ namespace habigisu
 
         private void btnClient_Click(object sender, EventArgs e)
         {
-            int aflag = au.CheckDeptAuthority(2, eid);
-            Console.WriteLine(aflag);
-            if (aflag == 0)
+            int d_flag = au.CheckDeptAuthority(2, eid);
+            int p_flag = au.CheckPosAuthority(2, eid);
+
+            if (d_flag == 0 || p_flag == 0)
             {
                 MessageBox.Show("顧客管理に行くお");
             }
@@ -79,12 +83,12 @@ namespace habigisu
 
         private void btnPassChange_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("パスワード変更します");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("ログイン画面に戻る");
         }
     }
 }

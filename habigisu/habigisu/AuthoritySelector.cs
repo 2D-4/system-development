@@ -59,7 +59,7 @@ namespace habigisu
             return -1;
         }
 
-        //部署毎の管理レベルに応じて閲覧を制限する関数
+        //役職毎の管理レベルに応じて閲覧を制限する関数
         public int CheckPosAuthority(int ManageNumber, string eid)
         {
             cn.ConnectionString =
