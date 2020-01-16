@@ -13,10 +13,11 @@ namespace habigisu
 {
     public partial class frmMain : Form
     {
-        public AuthoritySelector au = new AuthoritySelector();
+        string eid = "9";
+        AuthoritySelector au = new AuthoritySelector();
         public frmMain()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
@@ -36,17 +37,44 @@ namespace habigisu
 
         private void btnShipping_Click(object sender, EventArgs e)
         {
-            au.CheckDeptAuthority(0, eid);
+            int aflag = au.CheckDeptAuthority(0, eid);
+            Console.WriteLine(aflag);
+            if(aflag == 0)
+            {
+                MessageBox.Show("出庫管理に行くお");
+            }
+            else
+            {
+                MessageBox.Show("権限ないよ");
+            }
         }
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-
+            int aflag = au.CheckDeptAuthority(1, eid);
+            Console.WriteLine(aflag);
+            if (aflag == 0)
+            {
+                MessageBox.Show("売上管理に行くお");
+            }
+            else
+            {
+                MessageBox.Show("権限ないよ");
+            }
         }
 
         private void btnClient_Click(object sender, EventArgs e)
         {
-
+            int aflag = au.CheckDeptAuthority(2, eid);
+            Console.WriteLine(aflag);
+            if (aflag == 0)
+            {
+                MessageBox.Show("顧客管理に行くお");
+            }
+            else
+            {
+                MessageBox.Show("権限ないよ");
+            }
         }
 
         private void btnPassChange_Click(object sender, EventArgs e)
