@@ -57,7 +57,9 @@ namespace login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            habigisu.frmOrderstockManegement fmOM = new habigisu.frmOrderstockManegement();
+            fmOM.Show();//仮置きコード（後で消す）
         }
 
         private void btnCansel_Click(object sender, EventArgs e)
