@@ -22,8 +22,8 @@ namespace habigisu
         private void dataload()
         {
             cn.ConnectionString =
-                @"Provider = Microsoft.ACE.OLEDB.12.0;Data Source = |DataDirectory|\DBJapan.accdb;";
-            OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Member2 ORDER BY ID", cn);
+                @"Provider = Microsoft.ACE.OLEDB.12.0;Data Source = |DataDirectory|\Habigisu.accdb;";
+            OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM 注文テーブル ORDER BY 注文ID", cn);
             DataTable dt = new DataTable();
             da.Fill(dt);
             fOCDataGridView.DataSource = dt;
@@ -52,8 +52,8 @@ namespace habigisu
         {
 
          cn.ConnectionString =
-         @"Provider = Microsoft.ACE.OLEDB.12.0;Data Source = |DataDirectory|\DBJapan.accdb;";
-         OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Member2 ORDER BY ID", cn);
+         @"Provider = Microsoft.ACE.OLEDB.12.0;Data Source = |DataDirectory|\Habigisu.accdb;";
+         OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM 注文詳細", cn);
          DataTable dt = new DataTable();
          da.Fill(dt);
          fOCDataGridView.DataSource = dt;
@@ -68,8 +68,8 @@ namespace habigisu
         private void fOCDeleteBtn_Click(object sender, EventArgs e)
         {
             int selectrow = fOCDataGridView.CurrentCell.RowIndex;                 //選択されている行番号
-            OleDbCommand cmd = new OleDbCommand("DELETE FROM Member2 WHERE ID = @id", cn);
-            cmd.Parameters.AddWithValue("@id", fOCDataGridView.Rows[selectrow].Cells["ID"].Value);
+            OleDbCommand cmd = new OleDbCommand("DELETE FROM 注文詳細 WHERE 注文ID = @id", cn);
+            cmd.Parameters.AddWithValue("@id", fOCDataGridView.Rows[selectrow].Cells["注文ID"].Value);
             try
             {
                 cn.Open();

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.fOMBtn1 = new System.Windows.Forms.Button();
-            this.fOMStatusTbox = new System.Windows.Forms.TextBox();
+            this.fOMCustomerTbox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.fOMSearchBtn = new System.Windows.Forms.Button();
             this.fOMDataGridView = new System.Windows.Forms.DataGridView();
@@ -47,6 +47,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ProductS = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fOMDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,28 +62,27 @@
             this.fOMBtn1.UseVisualStyleBackColor = true;
             this.fOMBtn1.Click += new System.EventHandler(this.fOMBtn1_Click);
             // 
-            // fOMStatusTbox
+            // fOMCustomerTbox
             // 
-            this.fOMStatusTbox.Location = new System.Drawing.Point(2, 44);
-            this.fOMStatusTbox.Name = "fOMStatusTbox";
-            this.fOMStatusTbox.Size = new System.Drawing.Size(156, 22);
-            this.fOMStatusTbox.TabIndex = 1;
-            this.fOMStatusTbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fOMStatusTbox_KeyDown);
+            this.fOMCustomerTbox.Location = new System.Drawing.Point(249, 45);
+            this.fOMCustomerTbox.Name = "fOMCustomerTbox";
+            this.fOMCustomerTbox.Size = new System.Drawing.Size(150, 22);
+            this.fOMCustomerTbox.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(164, 47);
+            this.label1.Location = new System.Drawing.Point(405, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 15);
+            this.label1.Size = new System.Drawing.Size(51, 15);
             this.label1.TabIndex = 2;
-            this.label1.Text = "顧客注文状況";
+            this.label1.Text = "顧客ID";
             // 
             // fOMSearchBtn
             // 
-            this.fOMSearchBtn.Location = new System.Drawing.Point(698, 69);
+            this.fOMSearchBtn.Location = new System.Drawing.Point(462, 44);
             this.fOMSearchBtn.Name = "fOMSearchBtn";
-            this.fOMSearchBtn.Size = new System.Drawing.Size(100, 26);
+            this.fOMSearchBtn.Size = new System.Drawing.Size(61, 50);
             this.fOMSearchBtn.TabIndex = 9;
             this.fOMSearchBtn.Text = "検索";
             this.fOMSearchBtn.UseVisualStyleBackColor = true;
@@ -129,7 +130,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(315, 75);
+            this.label5.Location = new System.Drawing.Point(216, 75);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(22, 15);
             this.label5.TabIndex = 17;
@@ -147,15 +148,15 @@
             // 
             // fOMProductTbox
             // 
-            this.fOMProductTbox.Location = new System.Drawing.Point(506, 44);
+            this.fOMProductTbox.Location = new System.Drawing.Point(559, 59);
             this.fOMProductTbox.Name = "fOMProductTbox";
-            this.fOMProductTbox.Size = new System.Drawing.Size(169, 22);
+            this.fOMProductTbox.Size = new System.Drawing.Size(115, 22);
             this.fOMProductTbox.TabIndex = 28;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(681, 47);
+            this.label9.Location = new System.Drawing.Point(680, 62);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 15);
             this.label9.TabIndex = 29;
@@ -191,16 +192,15 @@
             // 
             // fOMOrderIdTbox
             // 
-            this.fOMOrderIdTbox.Location = new System.Drawing.Point(280, 44);
+            this.fOMOrderIdTbox.Location = new System.Drawing.Point(12, 44);
             this.fOMOrderIdTbox.Name = "fOMOrderIdTbox";
-            this.fOMOrderIdTbox.Size = new System.Drawing.Size(154, 22);
+            this.fOMOrderIdTbox.Size = new System.Drawing.Size(164, 22);
             this.fOMOrderIdTbox.TabIndex = 33;
-            this.fOMOrderIdTbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.fOMOrderIdTbox_KeyDown);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(440, 47);
+            this.label12.Location = new System.Drawing.Point(182, 47);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(51, 15);
             this.label12.TabIndex = 34;
@@ -208,23 +208,45 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(80, 72);
+            this.dateTimePicker1.Location = new System.Drawing.Point(36, 73);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(156, 22);
             this.dateTimePicker1.TabIndex = 35;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(379, 72);
+            this.dateTimePicker2.Location = new System.Drawing.Point(249, 72);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(158, 22);
             this.dateTimePicker2.TabIndex = 36;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(12, 75);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(18, 17);
+            this.checkBox1.TabIndex = 37;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // ProductS
+            // 
+            this.ProductS.Location = new System.Drawing.Point(737, 45);
+            this.ProductS.Name = "ProductS";
+            this.ProductS.Size = new System.Drawing.Size(52, 50);
+            this.ProductS.TabIndex = 38;
+            this.ProductS.Text = "検索";
+            this.ProductS.UseVisualStyleBackColor = true;
+            this.ProductS.Click += new System.EventHandler(this.ProductS_Click);
             // 
             // frmOrderManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ProductS);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label12);
@@ -242,11 +264,10 @@
             this.Controls.Add(this.fOMDataGridView);
             this.Controls.Add(this.fOMSearchBtn);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.fOMStatusTbox);
+            this.Controls.Add(this.fOMCustomerTbox);
             this.Controls.Add(this.fOMBtn1);
             this.Name = "frmOrderManagement";
             this.Text = "注文管理画面";
-            this.Shown += new System.EventHandler(this.frmOrderManagement_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.fOMDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -256,7 +277,7 @@
         #endregion
 
         private System.Windows.Forms.Button fOMBtn1;
-        private System.Windows.Forms.TextBox fOMStatusTbox;
+        private System.Windows.Forms.TextBox fOMCustomerTbox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button fOMSearchBtn;
         private System.Windows.Forms.DataGridView fOMDataGridView;
@@ -274,5 +295,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button ProductS;
     }
 }
