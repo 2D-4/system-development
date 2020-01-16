@@ -105,7 +105,5 @@ namespace habigisu
                 fSIdTBox.Text = value;
             }
         }
-
-
     }
 }

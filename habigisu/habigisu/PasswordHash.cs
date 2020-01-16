@@ -22,7 +22,7 @@ namespace habigisu
             byte[] hash = csp.ComputeHash(buffer);                                      //ハッシュ化
             return Convert.ToBase64String(hash);                                        //Base64で返却
         }
-
+        
         //ハッシュ化文字列がDB内のハッシュ化文字列と一致しているかを判定、DBにハッシュ化文字列がなければ格納する関数
         private int CheckPassword(string hspass ,string id)
         {
@@ -77,7 +77,7 @@ namespace habigisu
                 return -1;                             //社員番号ないよ
             }
         }
-
+        
         ////パスワードをハッシュ化,判定して正しければ社員番号と社員名を返却する関数
         //public string CheckEmployee(string pwd, string salt,string eid)
         //{
