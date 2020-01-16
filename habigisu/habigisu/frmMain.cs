@@ -1,24 +1,16 @@
-﻿using habigisu;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace habigisu
 {
     public partial class frmMain : Form
     {
-        string eid = "9";
+        string eid = frmSignin.frmSigninInstance.fSIdTBoxText;
         AuthoritySelector au = new AuthoritySelector();
         public frmMain()
         {
             InitializeComponent();
-            lbleid.Text = eid;
+            lblfMAssigneid.Text += eid;
         }
 
         private void btnProduct_Click(object sender, EventArgs e)
@@ -88,7 +80,9 @@ namespace habigisu
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ログイン画面に戻る");
+            frmSignin fs = new frmSignin();
+            Close();
+            fs.Show();
         }
     }
 }
