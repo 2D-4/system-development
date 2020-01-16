@@ -51,11 +51,12 @@ namespace habigisu
             Prodcut[2] = FPMPidTbox.Text; //商品ID
             Prodcut[3] = FPMProTbox.Text;  //商品名
             Prodcut[4] = FPMAutTbox.Text;  //著者名
-           
-            　　
 
-            int count = 0;
-            string sql = "SELECT * FROM 商品マスタ";
+
+            int flg = 0; //テーブル結合検索が複数ある場合も大丈夫なように、WHERE句を別に分ける
+            int count = 0; //1つ以上あるかどうか(テーブル結合検索以外で
+            
+            string sql = "SELECT 商品マスタ.* FROM ";
 
 
 
@@ -67,39 +68,42 @@ namespace habigisu
                     {
                         switch (i)
                         {
-                            case 0:
+                            case 0: //ジャンル検索
                                 {
-                                    sql += "Left Join ジャンルマスタ " +
-                                        "on ジャンルマスタ.ジャンル名='" + Prodcut[i] + "'";
-                                    sql += "Left Join 分類マスタ" +
-                                        "on 商品マスタ.分類コード=分類マスタ.分類コード" +
-                                        "on 分類マスタ.ジャンルID=ジャンルマスタ.ID";             //ここを直す
+                                    sql += "(ジャンルマスタ INNER JOIN 分類マスタ ON 分類マスタ.ジャンルID=ジャンルマスタ.ID)INNER JOIN 商品マスタ ON 商品マスタ.分類コード= 分類マスタ.分類コード WHERE ジャンルマスタ.ジャンル名='" + Prodcut[i] + "'";
+
+                                    flg += 1;//WHERE句様のやつ(家でやる)
                                     break;
                                 }
 
-                            case 1:
-                                sql += "Sales = '" + Prodcut[i] + "' ";
-                                break;
-
-                            case 2:
+                            case 1: //出版社検索
                                 {
-                                    sql += " WHERE ";
+                                    sql += "商品マスタ LEFT JOIN 仕入先マスタ ON 商品マスタ.仕入先ID=仕入先マスタ.ID WHERE 仕入先マスタ.仕入先名='" + Prodcut[i] + "'";
+
+                                    flg += 2; //同じようにやる↑
+                                    break;
+                                }
+                                
+
+                            case 2: //商品ID検索
+                                {
+                                    sql += "商品マスタ WHERE ";
                                     sql += "ID Like '%" + Prodcut[i] + "' ";
                                     count++;
                                     break;
                                 }
 
-                            case 3:
+                            case 3: //商品名検索
                                 {
-                                    sql += " WHERE ";
+                                    sql += "商品マスタ WHERE ";
                                     sql += "商品名 Like '%" + Prodcut[i] + "%' ";
                                     count++;
                                     break;
                                 }
 
-                            case 4:
+                            case 4: //著者名検索
                                 {
-                                    sql += " WHERE ";
+                                    sql += "商品マスタ WHERE ";
                                     sql += "著者名 Like '%" + Prodcut[i] + "%' ";
                                     count++;
                                     break;
@@ -107,18 +111,18 @@ namespace habigisu
                         }
 
                     }
-                    else
+                    else //一つ以上の検索内容があった場合
                     {
                         sql += " AND ";
                         switch (i)
                         {     
-                            case 2:
+                            case 2: //商品ID検索
                                 sql += "ID Like '%" + Prodcut[i] + "' ";
                                 break;
-                            case 3:
+                            case 3: //商品名検索
                                 sql += "商品名 Like '%" + Prodcut[i] + "%' ";
                                 break;
-                            case 4:
+                            case 4: //著者名検索
                                 sql += "著者名 Like '%" + Prodcut[i] + "%' ";
                                 break;
                         }
