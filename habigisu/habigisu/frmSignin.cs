@@ -1,16 +1,8 @@
-using habigisu;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace login
+namespace habigisu
 {
     public partial class frmSignin : Form
     {
@@ -24,6 +16,7 @@ namespace login
         {
             fSIdTBox.ImeMode = ImeMode.Disable;
             fSPassTBox.ImeMode = ImeMode.Disable;
+            frmSigninInstance = this;
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -33,7 +26,7 @@ namespace login
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("終了しますか？", "終了確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question,MessageBoxDefaultButton.Button2);
+            DialogResult result = MessageBox.Show("終了しますか？", "終了確認", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
             if (result == DialogResult.No)
             {
                 e.Cancel = true; //画面を閉じようとすると確認ポップ画面を出す
@@ -76,12 +69,9 @@ namespace login
             }
             else
             {
-                string ekana = ph.CheckEmployee(pwd, salt, eid);
-                //Console.WriteLine(ekana);
-                if(ekana != "\0")
-                {
-                    MessageBox.Show("ログインしました！");
-                }
+                    frmMain fm = new frmMain();
+                    Hide();
+                    fm.Show();
             }
         }
 
@@ -90,6 +80,32 @@ namespace login
             Close(); //フォームを閉じようとする(確認ポップ画面が出る)
         }
 
-        
+        private static frmSignin _frmSigninInstance;            //frmSigninのオブジェクトを保持する
+
+        public static frmSignin frmSigninInstance
+        {
+            get
+            {
+                return _frmSigninInstance;
+            }
+            set
+            {
+                _frmSigninInstance = value;
+            }
+        }
+
+        public string fSIdTBoxText
+        {
+            get
+            {
+                return fSIdTBox.Text;
+            }
+            set
+            {
+                fSIdTBox.Text = value;
+            }
+        }
+
+
     }
 }

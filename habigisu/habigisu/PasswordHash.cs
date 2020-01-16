@@ -1,11 +1,8 @@
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.OleDb;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace habigisu
@@ -25,6 +22,7 @@ namespace habigisu
             byte[] hash = csp.ComputeHash(buffer);                                      //ハッシュ化
             return Convert.ToBase64String(hash);                                        //Base64で返却
         }
+
         //ハッシュ化文字列がDB内のハッシュ化文字列と一致しているかを判定、DBにハッシュ化文字列がなければ格納する関数
         private int CheckPassword(string hspass ,string id)
         {
@@ -80,38 +78,38 @@ namespace habigisu
             }
         }
 
-        //パスワードをハッシュ化,判定して正しければ社員番号と社員名を返却する関数
-        public string CheckEmployee(string pwd, string salt,string eid)
-        {
-            if(CheckPassword(GeneratePasswordHash(pwd, salt), eid) == 0)
-            {
-                OleDbDataAdapter da = new OleDbDataAdapter(); //データアダプタオブジェクト
-                OleDbCommand cmd = new OleDbCommand();        //コマンドオブジェクト
-                cmd.Connection = cn;
+        ////パスワードをハッシュ化,判定して正しければ社員番号と社員名を返却する関数
+        //public string CheckEmployee(string pwd, string salt,string eid)
+        //{
+        //    if(CheckPassword(GeneratePasswordHash(pwd, salt), eid) == 0)
+        //    {
+        //        OleDbDataAdapter da = new OleDbDataAdapter(); //データアダプタオブジェクト
+        //        OleDbCommand cmd = new OleDbCommand();        //コマンドオブジェクト
+        //        cmd.Connection = cn;
 
-                cmd.CommandText = "SELECT 氏名ｶﾅ FROM 社員マスタ WHERE ID=@eid"; //氏名をDBからとってくるSQL文
-                da.SelectCommand = cmd;
+        //        cmd.CommandText = "SELECT 氏名ｶﾅ FROM 社員マスタ WHERE ID=@eid"; //氏名をDBからとってくるSQL文
+        //        da.SelectCommand = cmd;
 
-                cmd.Parameters.AddWithValue("@eid", eid);       //IDのパラメータ
-                DataTable dt = new DataTable();
-                da.Fill(dt);
+        //        cmd.Parameters.AddWithValue("@eid", eid);       //IDのパラメータ
+        //        DataTable dt = new DataTable();
+        //        da.Fill(dt);
 
-                if(dt.Rows.Count > 0)                           //検索結果が正常に帰ってきたとき
-                {
-                    string ekana = cmd.ExecuteScalar().ToString();    //DBから見つかった社員名をekanaへ格納
-                    cn.Close();
-                    return ekana;                                       //正常な返却地
-                }
+        //        if(dt.Rows.Count > 0)                           //検索結果が正常に帰ってきたとき
+        //        {
+        //            string ekana = cmd.ExecuteScalar().ToString();    //DBから見つかった社員名をekanaへ格納
+        //            cn.Close();
+        //            return ekana;                                       //正常な返却地
+        //        }
                
-                else
-                {
-                    MessageBox.Show("社員番号、もしくはパスワードが間違っているか、存在しません。");
-                    return "\0";
-                }
-            }
-            else
-                MessageBox.Show("社員番号、もしくはパスワードが間違っているか、存在しません。");
-            return "\0";                                                //社員番号ないよ
-        }
+        //        else
+        //        {
+        //            MessageBox.Show("社員番号、もしくはパスワードが間違っているか、存在しません。");
+        //            return "\0";
+        //        }
+        //    }
+        //    else
+        //        MessageBox.Show("社員番号、もしくはパスワードが間違っているか、存在しません。");
+        //    return "\0";                                                //社員番号ないよ
+        //}
     }
 }
