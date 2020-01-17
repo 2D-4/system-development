@@ -13,6 +13,8 @@ namespace habigisu
 {
     public partial class frmOrderstockManegement : Form
     {
+        string eid = frmSignin.frmSigninInstance.fSIdTBoxText;
+
         OleDbConnection cn = new OleDbConnection(); //グローバル変数　コネクションオブジェクト
         private object habigisu;
         private object fOSManegement;
@@ -20,6 +22,7 @@ namespace habigisu
         public frmOrderstockManegement()
         {
             InitializeComponent();
+            lblfOSeidasign.Text += eid;
         }
 
         private void dataload()
@@ -178,9 +181,7 @@ namespace habigisu
 
         private void fOSConfirmBtn_Click(object sender, EventArgs e)
         {
-            frmOrderstockManegement form2 = new
-            frmOrderstockManegement();
-            form2.ShowDialog();
+            Close();
         }
 
         private void fOSdtPicker2_ValueChanged(object sender, EventArgs e)

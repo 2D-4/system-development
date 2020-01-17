@@ -15,7 +15,7 @@ namespace habigisu
 
         private void btnProduct_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("商品管理に行く");
+            MessageBox.Show("商品管理に行く");           
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
@@ -25,7 +25,8 @@ namespace habigisu
 
         private void btnOderStock_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("発注管理に行く");
+            frmOrderstockManegement fo = new frmOrderstockManegement();
+            fo.ShowDialog();
         }
 
         private void btnShipping_Click(object sender, EventArgs e)
@@ -35,7 +36,7 @@ namespace habigisu
 
             if(d_flag == 0 || p_flag == 0)
             {
-                MessageBox.Show("出庫管理に行くお");
+                MessageBox.Show("出庫管理に行く");
             }
             else
             {
@@ -50,7 +51,7 @@ namespace habigisu
 
             if (d_flag == 0 || p_flag == 0)
             {
-                MessageBox.Show("売上管理に行くお");
+                MessageBox.Show("売上管理に行く");
             }
             else
             {
@@ -65,7 +66,7 @@ namespace habigisu
 
             if (d_flag == 0 || p_flag == 0)
             {
-                MessageBox.Show("顧客管理に行くお");
+                MessageBox.Show("顧客管理に行く");
             }
             else
             {
