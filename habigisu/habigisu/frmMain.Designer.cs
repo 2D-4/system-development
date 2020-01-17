@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbleid = new System.Windows.Forms.Label();
-            this.lblename = new System.Windows.Forms.Label();
+            this.lblfMeid = new System.Windows.Forms.Label();
+            this.lblfMAssigneid = new System.Windows.Forms.Label();
             this.btnProduct = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
             this.btnOderStock = new System.Windows.Forms.Button();
@@ -40,23 +40,23 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lbleid
+            // lblfMeid
             // 
-            this.lbleid.AutoSize = true;
-            this.lbleid.Location = new System.Drawing.Point(674, 9);
-            this.lbleid.Name = "lbleid";
-            this.lbleid.Size = new System.Drawing.Size(51, 15);
-            this.lbleid.TabIndex = 0;
-            this.lbleid.Text = "社員ID";
+            this.lblfMeid.AutoSize = true;
+            this.lblfMeid.Location = new System.Drawing.Point(653, 9);
+            this.lblfMeid.Name = "lblfMeid";
+            this.lblfMeid.Size = new System.Drawing.Size(59, 15);
+            this.lblfMeid.TabIndex = 0;
+            this.lblfMeid.Text = "社員ID：";
             // 
-            // lblename
+            // lblfMAssigneid
             // 
-            this.lblename.AutoSize = true;
-            this.lblename.Location = new System.Drawing.Point(745, 9);
-            this.lblename.Name = "lblename";
-            this.lblename.Size = new System.Drawing.Size(52, 15);
-            this.lblename.TabIndex = 1;
-            this.lblename.Text = "社員名";
+            this.lblfMAssigneid.AutoSize = true;
+            this.lblfMAssigneid.Location = new System.Drawing.Point(718, 9);
+            this.lblfMAssigneid.Name = "lblfMAssigneid";
+            this.lblfMAssigneid.Size = new System.Drawing.Size(55, 15);
+            this.lblfMAssigneid.TabIndex = 1;
+            this.lblfMAssigneid.Text = "000000";
             // 
             // btnProduct
             // 
@@ -151,8 +151,8 @@
             this.Controls.Add(this.btnOderStock);
             this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.btnProduct);
-            this.Controls.Add(this.lblename);
-            this.Controls.Add(this.lbleid);
+            this.Controls.Add(this.lblfMAssigneid);
+            this.Controls.Add(this.lblfMeid);
             this.Name = "frmMain";
             this.Text = "ホーム画面";
             this.ResumeLayout(false);
@@ -162,8 +162,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbleid;
-        private System.Windows.Forms.Label lblename;
+        private System.Windows.Forms.Label lblfMeid;
+        private System.Windows.Forms.Label lblfMAssigneid;
         private System.Windows.Forms.Button btnProduct;
         private System.Windows.Forms.Button btnOrder;
         private System.Windows.Forms.Button btnOderStock;
