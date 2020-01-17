@@ -138,9 +138,9 @@
             this.fOSnamelabel.AutoSize = true;
             this.fOSnamelabel.Location = new System.Drawing.Point(723, 23);
             this.fOSnamelabel.Name = "fOSnamelabel";
-            this.fOSnamelabel.Size = new System.Drawing.Size(52, 15);
+            this.fOSnamelabel.Size = new System.Drawing.Size(55, 15);
             this.fOSnamelabel.TabIndex = 8;
-            this.fOSnamelabel.Text = "社員名";
+            this.fOSnamelabel.Text = "000000";
             this.fOSnamelabel.Click += new System.EventHandler(this.fOSnamelabel_Click);
             // 
             // fOSNlabel
