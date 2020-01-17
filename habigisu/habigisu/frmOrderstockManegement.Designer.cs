@@ -36,7 +36,7 @@
             this.fOSConfirmBtn = new System.Windows.Forms.Button();
             this.fOSBackBtn = new System.Windows.Forms.Button();
             this.fOSidlabel = new System.Windows.Forms.Label();
-            this.fOSnamelabel = new System.Windows.Forms.Label();
+            this.lblfOSeidasign = new System.Windows.Forms.Label();
             this.fOSNlabel = new System.Windows.Forms.Label();
             this.fOSMerchandiselabel = new System.Windows.Forms.Label();
             this.fOSOrdernamebrandlabel = new System.Windows.Forms.Label();
@@ -133,15 +133,15 @@
             this.fOSidlabel.Text = "社員ID";
             this.fOSidlabel.Click += new System.EventHandler(this.fOSidlabel_Click);
             // 
-            // fOSnamelabel
+            // lblfOSeidasign
             // 
-            this.fOSnamelabel.AutoSize = true;
-            this.fOSnamelabel.Location = new System.Drawing.Point(723, 23);
-            this.fOSnamelabel.Name = "fOSnamelabel";
-            this.fOSnamelabel.Size = new System.Drawing.Size(55, 15);
-            this.fOSnamelabel.TabIndex = 8;
-            this.fOSnamelabel.Text = "000000";
-            this.fOSnamelabel.Click += new System.EventHandler(this.fOSnamelabel_Click);
+            this.lblfOSeidasign.AutoSize = true;
+            this.lblfOSeidasign.Location = new System.Drawing.Point(723, 23);
+            this.lblfOSeidasign.Name = "lblfOSeidasign";
+            this.lblfOSeidasign.Size = new System.Drawing.Size(55, 15);
+            this.lblfOSeidasign.TabIndex = 8;
+            this.lblfOSeidasign.Text = "000000";
+            this.lblfOSeidasign.Click += new System.EventHandler(this.fOSnamelabel_Click);
             // 
             // fOSNlabel
             // 
@@ -268,7 +268,7 @@
             this.Controls.Add(this.fOSOrdernamebrandlabel);
             this.Controls.Add(this.fOSMerchandiselabel);
             this.Controls.Add(this.fOSNlabel);
-            this.Controls.Add(this.fOSnamelabel);
+            this.Controls.Add(this.lblfOSeidasign);
             this.Controls.Add(this.fOSidlabel);
             this.Controls.Add(this.fOSBackBtn);
             this.Controls.Add(this.fOSConfirmBtn);
@@ -296,7 +296,7 @@
         private System.Windows.Forms.Button fOSConfirmBtn;
         private System.Windows.Forms.Button fOSBackBtn;
         private System.Windows.Forms.Label fOSidlabel;
-        private System.Windows.Forms.Label fOSnamelabel;
+        private System.Windows.Forms.Label lblfOSeidasign;
         private System.Windows.Forms.Label fOSNlabel;
         private System.Windows.Forms.Label fOSMerchandiselabel;
         private System.Windows.Forms.Label fOSOrdernamebrandlabel;
