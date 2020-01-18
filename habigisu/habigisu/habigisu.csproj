@@ -52,6 +52,12 @@
     <Compile Include="frmPassChange.Designer.cs">
       <DependentUpon>frmPassChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProductManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductManagement.Designer.cs">
+      <DependentUpon>frmProductManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSignin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmPassChange.resx">
       <DependentUpon>frmPassChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductManagement.resx">
+      <DependentUpon>frmProductManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSignin.resx">
       <DependentUpon>frmSignin.cs</DependentUpon>

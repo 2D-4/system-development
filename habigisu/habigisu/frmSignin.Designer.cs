@@ -1,4 +1,4 @@
-﻿namespace login
+﻿namespace hibigisu
 {
     partial class frmSignin
     {
