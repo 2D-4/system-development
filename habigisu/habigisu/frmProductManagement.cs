@@ -60,7 +60,7 @@ namespace habigisu
 
 
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i <= 5; i++)
             {
                 if (Prodcut[i] != "")
                 {
@@ -69,61 +69,113 @@ namespace habigisu
                         switch (i)
                         {
                             case 0: //ジャンル検索
-                                {
-                                    sql += "(ジャンルマスタ INNER JOIN 分類マスタ ON 分類マスタ.ジャンルID=ジャンルマスタ.ID)INNER JOIN 商品マスタ ON 商品マスタ.分類コード= 分類マスタ.分類コード WHERE ジャンルマスタ.ジャンル名='" + Prodcut[i] + "'";
 
-                                    flg += 1;//WHERE句様のやつ(家でやる)
+                                    sql += "(ジャンルマスタ INNER JOIN 分類マスタ ON 分類マスタ.ジャンルID=ジャンルマスタ.ID)INNER JOIN 商品マスタ ON 商品マスタ.分類コード= 分類マスタ.分類コード ";
+
+                                    flg += 1;   //ジャンル検索のWHERE句を覚えておく(最後に使う)
                                     break;
-                                }
+                                
 
                             case 1: //出版社検索
-                                {
-                                    sql += "商品マスタ LEFT JOIN 仕入先マスタ ON 商品マスタ.仕入先ID=仕入先マスタ.ID WHERE 仕入先マスタ.仕入先名='" + Prodcut[i] + "'";
 
-                                    flg += 2; //同じようにやる↑
+                                    sql += "商品マスタ LEFT JOIN 仕入先マスタ ON 商品マスタ.仕入先ID=仕入先マスタ.ID";
+
+                                    flg += 2;   //ジャンル検索のWHERE句を覚えておく(最後に使う)
                                     break;
-                                }
+                                
                                 
 
                             case 2: //商品ID検索
-                                {
-                                    sql += "商品マスタ WHERE ";
-                                    sql += "ID Like '%" + Prodcut[i] + "' ";
+
+                                    if (flg == 0)   //テーブル結合検索が含まれているか
+                                    {
+                                        sql += "商品マスタ ";   //なければFROM句にマスタを追加する
+                                    }
+                                   
+                                    sql += "WHERE ID Like '%" + Prodcut[i] + "' ";
                                     count++;
                                     break;
-                                }
+                                
 
                             case 3: //商品名検索
-                                {
-                                    sql += "商品マスタ WHERE ";
-                                    sql += "商品名 Like '%" + Prodcut[i] + "%' ";
+
+                                    if (flg == 0)   //テーブル結合検索が含まれているか
+                                    {
+                                        sql += "商品マスタ ";   //なければFROM句にマスタを追加する
+                                    }
+                                    
+                                    sql += "WHERE 商品名 Like '%" + Prodcut[i] + "%' ";
                                     count++;
                                     break;
-                                }
+                                
 
                             case 4: //著者名検索
-                                {
-                                    sql += "商品マスタ WHERE ";
-                                    sql += "著者名 Like '%" + Prodcut[i] + "%' ";
+
+                                    if (flg == 0)   //テーブル結合検索が含まれているか
+                                    {
+                                        sql += "商品マスタ ";   //なければFROM句にマスタを追加する
+                                    }
+
+                                    sql += "WHERE 著者名 Like '%" + Prodcut[i] + "%' ";
                                     count++;
                                     break;
-                                }
+
+                            default:   //何もない場合(テーブル結合検索があり、著者名に項目がある場合の時の為に一度余分にfor文を回している。elseのif(1<=flg)を通すため)
+                                    break;
                         }
 
                     }
                     else //一つ以上の検索内容があった場合
                     {
+
+
+                        if (1 <= flg)   //ジャンル・出版社検索に項目があり、他にも項目がある場合(AND)
+                        {
+                            switch (flg)
+                            {
+                                case 1:   //テーブル結合検索がジャンルだけの場合
+
+                                        sql += "AND ジャンルマスタ.ジャンル名='" + Prodcut[0] + "'";   //ジャンル(AND)
+                                        flg = 0;
+                                        break;
+                                    
+                                case 2:   //テーブル結合検索が出版社だけの場合
+
+                                        sql += "AND 仕入先マスタ.仕入先名='" + Prodcut[1] + "'";    //出版社(AND)
+                                        flg = 0;
+                                        break;
+                                    
+                                case 3:    //テーブル結合検索が両方ある場合
+
+                                        sql += "AND ジャンルマスタ.ジャンル名='" + Prodcut[0] + "'";   //ジャンル(AND)
+                                        sql += "AND 仕入先マスタ.仕入先名='" + Prodcut[1] + "'";   //出版社(AND)
+                                        flg = 0;
+                                        break;
+                                    
+                            }
+                        }
+
+
+
                         sql += " AND ";
                         switch (i)
                         {     
                             case 2: //商品ID検索
+
                                 sql += "ID Like '%" + Prodcut[i] + "' ";
                                 break;
+
                             case 3: //商品名検索
+
                                 sql += "商品名 Like '%" + Prodcut[i] + "%' ";
                                 break;
+
                             case 4: //著者名検索
+
                                 sql += "著者名 Like '%" + Prodcut[i] + "%' ";
+                                break;
+
+                            default:   //テーブル結合検索があり、著者名に項目がある場合は、ここを通る(テーブル結合のAND句を通すため)
                                 break;
                         }
 
@@ -131,7 +183,36 @@ namespace habigisu
                 }
             }
 
-            selfunc(sql);
+
+            if (1 <= flg)   //ジャンル・出版社検索に項目があり、他にない場合(WHERE)
+            {
+                switch (flg)
+                {
+                    case 1:   //テーブル結合検索がジャンルだけの場合
+
+                            sql += "WHERE ジャンルマスタ.ジャンル名='" + Prodcut[0] + "'";   //ジャンル(WHERE)
+                            flg = 0;
+                            break;
+                        
+                    case 2:   //テーブル結合検索が出版社だけの場合
+
+                            sql += "WHERE 仕入先マスタ.仕入先名='" + Prodcut[1] + "'";    //出版社(WHERE)
+                            flg = 0;
+                            break;
+                        
+                    case 3:    //テーブル結合検索が両方ある場合
+
+                            sql += "WHERE ジャンルマスタ.ジャンル名='" + Prodcut[0] + "'";   //ジャンル(WHERE)
+                            sql += "AND 仕入先マスタ.仕入先名='" + Prodcut[1] + "'";   //出版社(AND)
+                            flg = 0;
+                            break;
+                        
+                }
+            }
+
+
+
+            selfunc(sql);   //SQL表示
 
             return 0;
         }
