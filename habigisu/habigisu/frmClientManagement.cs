@@ -39,7 +39,41 @@ namespace habigisu
 
         private void fCMSearchBtn_Click(object sender, EventArgs e)
         {
-            //検索
+            string[] array = new string[5];
+            array[0] = fCMTBox.Text;
+            // SELECT * FROM 顧客マスタ WHERE Client Like '落' AND 
+            int count = 0;
+            string sql = "SELECT * FROM 顧客マスタ";
+
+            for (int i = 0; i < 1; i++)
+            {
+                if (array[i] != "")
+                {
+                    if (count == 0)
+                    {
+                        sql += " WHERE ";
+                        switch (i)
+                        {
+                            case 0:
+                                sql += "fCMTBox Like '" + array[i] + "' ";
+                                break;
+                        }
+                        sql += array[i];
+                        count++;
+                    }
+                    else
+                    {
+                        sql += " AND ";
+                        switch (i)
+                        {
+                            case 0:
+                                sql += "Client Like '" + array[i] + "' ";
+                                break;
+                        }
+                        sql += array[i];
+                    }
+                }
+            }
         }
 
         private void fCMRegisterBtn_Click(object sender, EventArgs e)
@@ -50,8 +84,9 @@ namespace habigisu
 
         private void fCMUpdateBtn_Click(object sender, EventArgs e)
         {
-            var ds = new DataSet();  //OdbcDataAdapter.Update(?) 更新
-            
+             //OledbcDataAdapter.Update(?) 更新
+
+
         }
 
         private void fCMBackBtn_Click(object sender, EventArgs e)
