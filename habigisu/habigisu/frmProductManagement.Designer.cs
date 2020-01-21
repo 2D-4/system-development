@@ -45,6 +45,7 @@
             this.FPMPubTbox = new System.Windows.Forms.TextBox();
             this.FPMIDlbl = new System.Windows.Forms.Label();
             this.FPMGenreCBox = new System.Windows.Forms.ComboBox();
+            this.ClearBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -243,11 +244,23 @@
             this.FPMGenreCBox.TabIndex = 17;
             this.FPMGenreCBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FPMGenreCBox_KeyDown);
             // 
+            // ClearBtn
+            // 
+            this.ClearBtn.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearBtn.Location = new System.Drawing.Point(275, 449);
+            this.ClearBtn.Name = "ClearBtn";
+            this.ClearBtn.Size = new System.Drawing.Size(80, 47);
+            this.ClearBtn.TabIndex = 18;
+            this.ClearBtn.Text = "クリア";
+            this.ClearBtn.UseVisualStyleBackColor = true;
+            this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
+            // 
             // frmProductManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 508);
+            this.Controls.Add(this.ClearBtn);
             this.Controls.Add(this.FPMGenreCBox);
             this.Controls.Add(this.FPMIDlbl);
             this.Controls.Add(this.FPMPubTbox);
@@ -294,5 +307,6 @@
         private System.Windows.Forms.TextBox FPMPubTbox;
         private System.Windows.Forms.Label FPMIDlbl;
         private System.Windows.Forms.ComboBox FPMGenreCBox;
+        private System.Windows.Forms.Button ClearBtn;
     }
 }

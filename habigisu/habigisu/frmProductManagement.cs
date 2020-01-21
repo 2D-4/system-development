@@ -44,10 +44,10 @@ namespace habigisu
 
         private int  Search()　　　　　　　　　　　　　　　　//検索項目を使いSQLで検索する。
         {
-            string[] Prodcut = new string[5];
+            string[] Prodcut = new string[6];
 
-            Prodcut[0] = FPMGenreCBox.Text; //ジャンル (分類コードを先に特定しないといけない、検索できない) 
-            Prodcut[1] = FPMPubTbox.Text; //出版社名 (仕入れ先ID を先に特定しないといけない、検索できない)
+            Prodcut[0] = FPMPubTbox.Text; //出版社名 (仕入れ先ID を先に特定しないといけない、検索できない)
+            Prodcut[1] = FPMGenreCBox.Text; //ジャンル (分類コードを先に特定しないといけない、検索できない) 
             Prodcut[2] = FPMPidTbox.Text; //商品ID
             Prodcut[3] = FPMProTbox.Text;  //商品名
             Prodcut[4] = FPMAutTbox.Text;  //著者名
@@ -68,63 +68,126 @@ namespace habigisu
                     {
                         switch (i)
                         {
-                            case 0: //ジャンル検索
+                            case 0: //出版社検索
 
-                                    sql += "(ジャンルマスタ INNER JOIN 分類マスタ ON 分類マスタ.ジャンルID=ジャンルマスタ.ID)INNER JOIN 商品マスタ ON 商品マスタ.分類コード= 分類マスタ.分類コード ";
+                                sql += " 商品マスタ LEFT JOIN 仕入先マスタ ";
 
-                                    flg += 1;   //ジャンル検索のWHERE句を覚えておく(最後に使う)
-                                    break;
-                                
+                                flg += 1;   //出版社検索のWHERE句を覚えておく(最後に使う)
+                                break;
 
-                            case 1: //出版社検索
 
-                                    sql += "商品マスタ LEFT JOIN 仕入先マスタ ON 商品マスタ.仕入先ID=仕入先マスタ.ID";
+                            case 1: //ジャンル検索
 
-                                    flg += 2;   //ジャンル検索のWHERE句を覚えておく(最後に使う)
-                                    break;
-                                
-                                
+                                if (1 == flg)
+                                {
+                                    sql += "ジャンルマスタ LEFT JOIN 分類マスタ ";
+                                }
+                                else
+                                {
+                                   sql += "(ジャンルマスタ INNER JOIN 分類マスタ ON 分類マスタ.ジャンルID=ジャンルマスタ.ID)INNER JOIN 商品マスタ ";
+                                }
+
+                                flg += 2;   //ジャンル検索のWHERE句を覚えておく(最後に使う)
+                                break;
+
 
                             case 2: //商品ID検索
 
-                                    if (flg == 0)   //テーブル結合検索が含まれているか
+                                if (flg == 0)   //テーブル結合のON句を追加
+                                {
+                                    sql += "商品マスタ ";   //なければFROM句にマスタを追加する
+                                }
+                                else
+                                {
+                                    switch (flg)
                                     {
-                                        sql += "商品マスタ ";   //なければFROM句にマスタを追加する
+                                        case 1:
+                                            sql += "ON 商品マスタ.仕入先ID=仕入先マスタ.ID ";
+                                            break;
+
+                                        case 2:
+                                             sql += "ON 商品マスタ.分類コード= 分類マスタ.分類コード ";
+                                            break;
+
+                                        case 3:
+                                            sql += "ON 商品マスタ.仕入先ID=仕入先マスタ.ID ";
+                                            sql += "ON 商品マスタ.分類コード= 分類マスタ.分類コード ";
+                                            break;
                                     }
-                                   
-                                    sql += "WHERE ID Like '%" + Prodcut[i] + "' ";
+                                }
+
+                                    sql += "WHERE 商品マスタ.ID Like '%" + Prodcut[i] + "' ";
                                     count++;
                                     break;
                                 
 
                             case 3: //商品名検索
 
-                                    if (flg == 0)   //テーブル結合検索が含まれているか
+                                if (flg == 0)   //テーブル結合のON句を追加
+                                {
+                                    sql += "商品マスタ ";   //なければFROM句にマスタを追加する
+                                }
+                                else
+                                {
+                                    switch (flg)
                                     {
-                                        sql += "商品マスタ ";   //なければFROM句にマスタを追加する
+                                        case 1:
+                                            sql += "ON 商品マスタ.仕入先ID=仕入先マスタ.ID ";
+                                            break;
+
+                                        case 2:
+                                            sql += "ON 商品マスタ.分類コード= 分類マスタ.分類コード ";
+                                            break;
+
+                                        case 3:
+                                            sql += "ON 商品マスタ.仕入先ID=仕入先マスタ.ID ";
+                                            sql += "ON 商品マスタ.分類コード= 分類マスタ.分類コード ";
+                                            break;
                                     }
-                                    
-                                    sql += "WHERE 商品名 Like '%" + Prodcut[i] + "%' ";
+                                }
+
+
+                                sql += "WHERE 商品名 Like '%" + Prodcut[i] + "%' ";
                                     count++;
                                     break;
                                 
 
                             case 4: //著者名検索
 
-                                    if (flg == 0)   //テーブル結合検索が含まれているか
+                                if (flg == 0)   //テーブル結合のON句を追加
+                                {
+                                    sql += "商品マスタ ";   //なければFROM句にマスタを追加する
+                                }
+                                else
+                                {
+                                    switch (flg)
                                     {
-                                        sql += "商品マスタ ";   //なければFROM句にマスタを追加する
-                                    }
+                                        case 1:
+                                            sql += "ON 商品マスタ.仕入先ID=仕入先マスタ.ID ";
+                                            break;
 
-                                    sql += "WHERE 著者名 Like '%" + Prodcut[i] + "%' ";
+                                        case 2:
+                                            sql += "ON 商品マスタ.分類コード= 分類マスタ.分類コード ";
+                                            break;
+
+                                        case 3:
+                                            sql += "ON 商品マスタ.仕入先ID=仕入先マスタ.ID ";
+                                            sql += "ON 商品マスタ.分類コード= 分類マスタ.分類コード ";
+                                            break;
+                                    }
+                                }
+
+                                sql += "WHERE 著者名 Like '%" + Prodcut[i] + "%' ";
                                     count++;
                                     break;
+
 
                             default:   //何もない場合(テーブル結合検索があり、著者名に項目がある場合の時の為に一度余分にfor文を回している。elseのif(1<=flg)を通すため)
                                     break;
                         }
 
                     }
+
                     else //一つ以上の検索内容があった場合
                     {
 
@@ -133,22 +196,24 @@ namespace habigisu
                         {
                             switch (flg)
                             {
-                                case 1:   //テーブル結合検索がジャンルだけの場合
+                                case 1:   //テーブル結合検索が出版社だけの場合
 
-                                        sql += "AND ジャンルマスタ.ジャンル名='" + Prodcut[0] + "'";   //ジャンル(AND)
+                                        sql += " AND 仕入先マスタ.仕入先名='" + Prodcut[0] + "'";    //出版社(AND)
+                                        flg = 0;
+                                        break;
+
+                                case 2:   //テーブル結合検索がジャンルだけの場合
+
+                                        sql += " AND ジャンルマスタ.ジャンル名='" + Prodcut[1] + "'";   //ジャンル(AND)
                                         flg = 0;
                                         break;
                                     
-                                case 2:   //テーブル結合検索が出版社だけの場合
-
-                                        sql += "AND 仕入先マスタ.仕入先名='" + Prodcut[1] + "'";    //出版社(AND)
-                                        flg = 0;
-                                        break;
+                                
                                     
                                 case 3:    //テーブル結合検索が両方ある場合
 
-                                        sql += "AND ジャンルマスタ.ジャンル名='" + Prodcut[0] + "'";   //ジャンル(AND)
-                                        sql += "AND 仕入先マスタ.仕入先名='" + Prodcut[1] + "'";   //出版社(AND)
+                                        sql += " AND ジャンルマスタ.ジャンル名='" + Prodcut[1] + "'";   //ジャンル(AND)
+                                        sql += " AND 仕入先マスタ.仕入先名='" + Prodcut[0] + "'";   //出版社(AND)
                                         flg = 0;
                                         break;
                                     
@@ -157,21 +222,24 @@ namespace habigisu
 
 
 
-                        sql += " AND ";
+                        
                         switch (i)
                         {     
                             case 2: //商品ID検索
 
+                                sql += " AND ";
                                 sql += "ID Like '%" + Prodcut[i] + "' ";
                                 break;
 
                             case 3: //商品名検索
 
+                                sql += " AND ";
                                 sql += "商品名 Like '%" + Prodcut[i] + "%' ";
                                 break;
 
                             case 4: //著者名検索
 
+                                sql += " AND ";
                                 sql += "著者名 Like '%" + Prodcut[i] + "%' ";
                                 break;
 
@@ -188,22 +256,25 @@ namespace habigisu
             {
                 switch (flg)
                 {
-                    case 1:   //テーブル結合検索がジャンルだけの場合
-
-                            sql += "WHERE ジャンルマスタ.ジャンル名='" + Prodcut[0] + "'";   //ジャンル(WHERE)
-                            flg = 0;
+                    case 1:   //テーブル結合検索が出版社だけの場合
+                        sql += "ON 商品マスタ.仕入先ID=仕入先マスタ.ID WHERE 仕入先マスタ.仕入先名='" + Prodcut[0] + "'";
+                        //sql += "WHERE 仕入先マスタ.仕入先名='" + Prodcut[1] + "'";    //出版社(WHERE)
+                        flg = 0;
+                        
                             break;
                         
-                    case 2:   //テーブル結合検索が出版社だけの場合
+                    case 2:   //テーブル結合検索がジャンルだけの場合
+                        sql += "ON 商品マスタ.分類コード= 分類マスタ.分類コード ";
+                        sql += "WHERE ジャンルマスタ.ジャンル名='" + Prodcut[1] + "'";   //ジャンル(WHERE)
+                        flg = 0;
 
-                            sql += "WHERE 仕入先マスタ.仕入先名='" + Prodcut[1] + "'";    //出版社(WHERE)
-                            flg = 0;
-                            break;
+                        break;
                         
                     case 3:    //テーブル結合検索が両方ある場合
-
-                            sql += "WHERE ジャンルマスタ.ジャンル名='" + Prodcut[0] + "'";   //ジャンル(WHERE)
-                            sql += "AND 仕入先マスタ.仕入先名='" + Prodcut[1] + "'";   //出版社(AND)
+                        sql += "ON 商品マスタ.分類コード= 分類マスタ.分類コード ";
+                        sql += "ON 商品マスタ.仕入先ID=仕入先マスタ.ID ";
+                        sql += "WHERE ジャンルマスタ.ジャンル名='" + Prodcut[1] + "'";   //ジャンル(WHERE)
+                            sql += "AND 仕入先マスタ.仕入先名='" + Prodcut[0] + "'";   //出版社(AND)
                             flg = 0;
                             break;
                         
@@ -280,6 +351,14 @@ namespace habigisu
         private void FPMPlistBtn_Click(object sender, EventArgs e)
         {
             selfunc("SELECT * FROM 商品マスタ");  //全商品表示
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            FPMPubTbox.Clear();  //出版社名 (仕入れ先ID を先に特定しないといけない、検索できない)
+            FPMPidTbox.Clear();  //商品ID
+            FPMProTbox.Clear();  //商品名
+            FPMAutTbox.Clear();  //著者名
         }
     }
 }
